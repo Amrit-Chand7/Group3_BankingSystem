@@ -54,12 +54,8 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="forget_btn" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                               <Component id="pass_input" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
                               <Component id="email_input" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
                           </Group>
@@ -73,6 +69,11 @@
                   <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
                   <Component id="login_btn" min="-2" pref="117" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="forgot_btn" min="-2" pref="156" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -90,8 +91,8 @@
                       <Component id="check_box" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="forget_btn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="forgot_btn" min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="login_btn" min="-2" pref="44" max="-2" attributes="0"/>
                   <EmptySpace pref="307" max="32767" attributes="0"/>
               </Group>
@@ -149,7 +150,7 @@
                       <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="99" max="32767" attributes="0"/>
+                      <EmptySpace pref="113" max="32767" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
@@ -255,7 +256,7 @@
             <Property name="text" type="java.lang.String" value="Password"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="forget_btn">
+        <Component class="javax.swing.JButton" name="forgot_btn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="e9" red="d8" type="rgb"/>
@@ -267,13 +268,13 @@
               <Color blue="16" green="16" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Forgot Password"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
-            </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forget_btnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forgot_btnActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="forgot_btn.setContentAreaFilled(false);&#xa;forgot_btn.setBorderPainted(false);&#xa;forgot_btn.setFocusPainted(false);&#xa;&#xa;forgot_btn.addMouseListener(new java.awt.event.MouseAdapter() {&#xa;    @Override&#xa;    public void mousePressed(java.awt.event.MouseEvent evt) {&#xa;        forgot_btn.setSize(forgot_btn.getWidth() - 2, forgot_btn.getHeight() - 2);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void mouseReleased(java.awt.event.MouseEvent evt) {&#xa;        forgot_btn.setSize(forgot_btn.getWidth() + 2, forgot_btn.getHeight() + 2);&#xa;    }&#xa;});&#xa;"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="email_input">
           <Properties>

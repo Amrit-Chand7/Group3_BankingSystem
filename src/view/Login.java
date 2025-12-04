@@ -64,7 +64,7 @@ public class Login extends javax.swing.JFrame {
         check_box = new javax.swing.JCheckBox();
         pass_input = new javax.swing.JPasswordField();
         jLabel15 = new javax.swing.JLabel();
-        forget_btn = new javax.swing.JButton();
+        forgot_btn = new javax.swing.JButton();
         email_input = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -133,7 +133,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(19, 19, 19))
         );
@@ -156,12 +156,26 @@ public class Login extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel15.setText("Password");
 
-        forget_btn.setBackground(new java.awt.Color(216, 233, 239));
-        forget_btn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        forget_btn.setForeground(new java.awt.Color(255, 22, 22));
-        forget_btn.setText("Forgot Password");
-        forget_btn.setBorder(null);
-        forget_btn.addActionListener(this::forget_btnActionPerformed);
+        forgot_btn.setBackground(new java.awt.Color(216, 233, 239));
+        forgot_btn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        forgot_btn.setForeground(new java.awt.Color(255, 22, 22));
+        forgot_btn.setText("Forgot Password");
+        forgot_btn.setContentAreaFilled(false);
+        forgot_btn.setBorderPainted(false);
+        forgot_btn.setFocusPainted(false);
+
+        forgot_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                forgot_btn.setSize(forgot_btn.getWidth() - 2, forgot_btn.getHeight() - 2);
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                forgot_btn.setSize(forgot_btn.getWidth() + 2, forgot_btn.getHeight() + 2);
+            }
+        });
+        forgot_btn.addActionListener(this::forgot_btnActionPerformed);
 
         email_input.setBackground(new java.awt.Color(217, 217, 217));
         email_input.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -178,13 +192,10 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(230, 230, 230)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(forget_btn)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addGap(262, 262, 262))
-                            .addComponent(pass_input, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(email_input, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(check_box)))
                 .addGap(0, 36, Short.MAX_VALUE))
@@ -192,6 +203,10 @@ public class Login extends javax.swing.JFrame {
                 .addGap(340, 340, 340)
                 .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(forgot_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(269, 269, 269))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,8 +221,8 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(check_box))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(forget_btn)
-                .addGap(30, 30, 30)
+                .addComponent(forgot_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(307, Short.MAX_VALUE))
         );
@@ -305,9 +320,9 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void forget_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forget_btnActionPerformed
+    private void forgot_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgot_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_forget_btnActionPerformed
+    }//GEN-LAST:event_forgot_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,7 +332,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox check_box;
     private javax.swing.JTextField email_input;
-    private javax.swing.JButton forget_btn;
+    private javax.swing.JButton forgot_btn;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
