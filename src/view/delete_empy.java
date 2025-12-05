@@ -38,7 +38,6 @@ public class delete_empy extends javax.swing.JFrame {
         dashboard_btn = new javax.swing.JButton();
         add_employee_btn = new javax.swing.JButton();
         history_btn = new javax.swing.JButton();
-        logout_btn = new javax.swing.JButton();
         search_txt = new javax.swing.JTextField();
         search_btn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -168,32 +167,6 @@ public class delete_empy extends javax.swing.JFrame {
         pic_outside_panel.add(skyblue_panel);
         skyblue_panel.setBounds(0, 0, 290, 1800);
 
-        logout_btn.setBackground(new java.awt.Color(147, 181, 211));
-        logout_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png.png"))); // NOI18N
-        logout_btn.setBorder(null);
-        logout_btn.setContentAreaFilled(false);
-        logout_btn.setBorderPainted(false);
-        logout_btn.setFocusPainted(false);
-
-        logout_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                logout_btn.setSize(logout_btn.getWidth() - 2, logout_btn.getHeight() - 2);
-            }
-
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                logout_btn.setSize(logout_btn.getWidth() + 2, logout_btn.getHeight() + 2);
-            }
-        });
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
-            }
-        });
-        pic_outside_panel.add(logout_btn);
-        logout_btn.setBounds(1400, 120, 70, 60);
-
         search_txt.setBackground(new java.awt.Color(217, 217, 217));
         search_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         search_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -216,10 +189,13 @@ public class delete_empy extends javax.swing.JFrame {
         pic_outside_panel.add(search_btn);
         search_btn.setBounds(970, 80, 100, 30);
 
+        jPanel1.setBackground(new java.awt.Color(222, 243, 247));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Delete Employee Account");
 
         delete_id.setBackground(new java.awt.Color(217, 217, 217));
+        delete_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         delete_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delete_idActionPerformed(evt);
@@ -250,38 +226,35 @@ public class delete_empy extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(view_btn)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(delete_id, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(213, 213, 213)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(134, 134, 134)
-                            .addComponent(delete_id, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                            .addComponent(view_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(delete_btn)
+                            .addGap(30, 30, 30))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(27, 27, 27)
                 .addComponent(delete_id, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(view_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                    .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
-        jPanel1.setBounds(440, 220, 720, 260);
+        jPanel1.setBounds(530, 220, 490, 240);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -309,10 +282,6 @@ public class delete_empy extends javax.swing.JFrame {
     private void search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_txtActionPerformed
-
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logout_btnActionPerformed
 
     private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
         // TODO add your handling code here:
@@ -376,7 +345,6 @@ public class delete_empy extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
-    private javax.swing.JButton logout_btn;
     private javax.swing.JPanel pic_outside_panel;
     private javax.swing.JButton search_btn;
     private javax.swing.JTextField search_txt;
