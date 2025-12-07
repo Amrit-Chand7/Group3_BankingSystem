@@ -36,8 +36,9 @@ public class password_changeUI extends javax.swing.JFrame {
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
         dashboard_btn = new javax.swing.JButton();
-        add_employee_btn = new javax.swing.JButton();
+        create_notice_btn = new javax.swing.JButton();
         history_btn = new javax.swing.JButton();
+        add_employee_btn1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         current_pass = new javax.swing.JTextField();
@@ -126,11 +127,11 @@ public class password_changeUI extends javax.swing.JFrame {
             }
         });
 
-        add_employee_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        add_employee_btn.setText("CREATE EMP ACCOUNT");
-        add_employee_btn.addActionListener(new java.awt.event.ActionListener() {
+        create_notice_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        create_notice_btn.setText("CREATE NOTICE");
+        create_notice_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_employee_btnActionPerformed(evt);
+                create_notice_btnActionPerformed(evt);
             }
         });
 
@@ -139,6 +140,14 @@ public class password_changeUI extends javax.swing.JFrame {
         history_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 history_btnActionPerformed(evt);
+            }
+        });
+
+        add_employee_btn1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        add_employee_btn1.setText("CREATE EMP ACCOUNT");
+        add_employee_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employee_btn1ActionPerformed(evt);
             }
         });
 
@@ -151,8 +160,9 @@ public class password_changeUI extends javax.swing.JFrame {
                 .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(history_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(dashboard_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(add_employee_btn, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(add_employee_btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(create_notice_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +171,11 @@ public class password_changeUI extends javax.swing.JFrame {
                 .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
                 .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(add_employee_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(84, 84, 84)
+                .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1173, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -295,9 +307,9 @@ public class password_changeUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_history_btnActionPerformed
 
-    private void add_employee_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btnActionPerformed
+    private void create_notice_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_notice_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_employee_btnActionPerformed
+    }//GEN-LAST:event_create_notice_btnActionPerformed
 
     private void dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboard_btnActionPerformed
         // TODO add your handling code here:
@@ -318,6 +330,10 @@ public class password_changeUI extends javax.swing.JFrame {
     private void current_pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_current_pass2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_current_pass2ActionPerformed
+
+    private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employee_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,10 +361,11 @@ public class password_changeUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton add_employee_btn;
+    private javax.swing.JButton add_employee_btn1;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton change_btn;
+    private javax.swing.JButton create_notice_btn;
     private javax.swing.JTextField current_pass;
     private javax.swing.JTextField current_pass1;
     private javax.swing.JTextField current_pass2;
