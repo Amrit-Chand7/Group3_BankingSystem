@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -75,6 +77,7 @@ public class Login extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1470, 932));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(216, 233, 239));
@@ -313,7 +316,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passwdActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:)
+        if (email_input.getText().trim().isEmpty() || pass_input.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please Enter Both Email And Password");
+        }
+        else if(email_input.getText().contains("a@gmail.com")&& pass_input.getText().contains("ammu") ){
+            JOptionPane.showMessageDialog(null, "Login Successful");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Incorrect Emaril or Password");
+        }
+            
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
