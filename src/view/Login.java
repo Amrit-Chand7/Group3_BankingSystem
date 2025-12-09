@@ -4,7 +4,7 @@
  */
 package view;
 
-import javax.swing.JOptionPane;
+import controller.LoginController;
 
 
 
@@ -16,10 +16,13 @@ public class Login extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
 
-    
+    private final LoginController loginController;
     public Login() {
         initComponents();
-         pass_input.setEchoChar('*');
+        pass_input.setEchoChar('*');
+        // Initialize the controller and pass this view to it
+        loginController = new LoginController(this);
+         
         
     }
     
@@ -317,16 +320,11 @@ public class Login extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:)
-        if (email_input.getText().trim().isEmpty() || pass_input.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please Enter Both Email And Password");
-        }
-        else if(email_input.getText().contains("a@gmail.com")&& pass_input.getText().contains("ammu") ){
-            JOptionPane.showMessageDialog(null, "Login Successful");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Incorrect Emaril or Password");
-        }
-            
+        String email = email_input.getText();
+        String password = new String(pass_input.getPassword());
+        // Send data to controller
+        loginController.login(email, password);
+        
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

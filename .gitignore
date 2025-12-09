@@ -1,2 +1,27 @@
+<<<<<<< HEAD
 /dist/
 /build/
+=======
+# NetBeans build and config files
+nbproject/private/
+build/
+dist/
+
+# Compiled Java classes
+*.class
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Test files
+TestConnection.java
+
+# Images folder (optional)
+image/
+>>>>>>> main
