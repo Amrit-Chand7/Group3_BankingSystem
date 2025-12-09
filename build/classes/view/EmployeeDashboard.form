@@ -308,7 +308,7 @@
               <Color blue="d3" green="b5" red="93" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/logout.png.png"/>
+              <Image iconType="3" name="/images/logout.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -345,7 +345,7 @@
               <Color blue="d3" green="b5" red="93" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/profile.png.png"/>
+              <Image iconType="3" name="/images/profile.png"/>
             </Property>
           </Properties>
           <Events>
