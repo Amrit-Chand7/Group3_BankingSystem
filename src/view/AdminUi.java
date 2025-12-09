@@ -164,7 +164,7 @@ public class AdminUi extends javax.swing.JFrame {
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
+                .addGap(173, 173, 173)
                 .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
                 .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,14 +172,14 @@ public class AdminUi extends javax.swing.JFrame {
                 .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
                 .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1173, Short.MAX_VALUE))
+                .addContainerGap(1183, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
         skyblue_panel.setBounds(0, 0, 290, 1800);
 
         logout_btn.setBackground(new java.awt.Color(147, 181, 211));
-        logout_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png.png"))); // NOI18N
+        logout_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
         logout_btn.setBorder(null);
         logout_btn.setContentAreaFilled(false);
         logout_btn.setBorderPainted(false);
@@ -210,7 +210,7 @@ public class AdminUi extends javax.swing.JFrame {
         logout_txt.setBounds(1400, 180, 70, 20);
 
         profile_btn.setBackground(new java.awt.Color(147, 181, 211));
-        profile_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png.png"))); // NOI18N
+        profile_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile_btn.setContentAreaFilled(false);
         profile_btn.setBorderPainted(false);
         profile_btn.setFocusPainted(false);
