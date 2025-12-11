@@ -20,8 +20,10 @@ dist/
 Thumbs.db
 
 # Test files
-TestConnection.java
 
+TestConnection.java
+Database.java
+MySqlConnection.java
 # Images folder (optional)
 image/
 >>>>>>> main
