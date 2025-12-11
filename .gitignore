@@ -6,7 +6,7 @@
 nbproject/private/
 build/
 dist/
-
+src/Database/
 # Compiled Java classes
 *.class
 
@@ -22,8 +22,7 @@ Thumbs.db
 # Test files
 
 TestConnection.java
-Database.java
-MySqlConnection.java
+
 # Images folder (optional)
 image/
 >>>>>>> main
