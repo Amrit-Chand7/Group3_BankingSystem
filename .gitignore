@@ -16,3 +16,4 @@ Thumbs.db
 # Test files
 TestConnection.java
 
+/nbproject/private/
