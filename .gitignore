@@ -1,9 +1,8 @@
 
 # NetBeans build and config files nbproject/private/
- Source Packages/Database/ build/ dist/
-
-# Compiled Java classes
-*.class
+ Source Packages/Database/ 
+build/ 
+dist/
 
 # Logs and temporary files
 *.log
@@ -17,5 +16,3 @@ Thumbs.db
 # Test files
 TestConnection.java
 
-# Images folder (optional)
-image/
