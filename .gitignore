@@ -1,7 +1,6 @@
-# NetBeans build and config files
-nbproject/private/
-build/
-dist/
+
+# NetBeans build and config files nbproject/private/
+ Source Packages/Database/ build/ dist/
 
 # Compiled Java classes
 *.class
