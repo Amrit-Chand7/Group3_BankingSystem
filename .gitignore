@@ -1,2 +1,19 @@
-/dist/
-/build/
+
+# NetBeans build and config files nbproject/private/
+ Source Packages/Database/ 
+build/ 
+dist/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Test files
+TestConnection.java
+
+/nbproject/private/
