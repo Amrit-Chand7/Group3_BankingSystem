@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import controller.NoticeController;
 /**
  *
  * @author amritchand
@@ -265,6 +265,10 @@ public class NoticUi extends javax.swing.JFrame {
 
     private void notice_post_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notice_post_btnActionPerformed
         // TODO add your handling code here:
+        String text = notice_txt.getText().trim();
+
+        NoticeController controller = new NoticeController();
+        controller.saveNotice(text);
     }//GEN-LAST:event_notice_post_btnActionPerformed
 
     private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed
