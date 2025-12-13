@@ -3,54 +3,73 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-
+import Database.MySqlConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import model.User;
-import java.sql.*;
+
 /**
- *
- * @author amritchand
+ * UserDao handles login for the default admin only.
  */
 public class UserDao {
+    
+    // Default admin details
+    private final String DEFAULT_ADMIN_NAME = "Amrit Chand Thakuri";
+    private final int DEFAULT_ADMIN_ID = 1;
+    private final String DEFAULT_ADMIN_EMAIL = "amrit@gmail.com";
 
-    private final String url = "jdbc:mysql://localhost:3306/BankingSystem"; 
-    private final String username = "root";
-    private final String password = "ammu@221";
+    // Hashed default admin password
+    private final String password = PasswordUtils.hashPassword("ammu@221");
+    
+    private MySqlConnection db = new MySqlConnection();
+    
+    public UserDao() {
+        try (Connection conn = db.openconnection()) {
 
-    public User getUserByEmailAndPassword(String email, String pass) {
-        User user = null;
+            // Check if admin already exists
+            String checkQuery = "SELECT id FROM admin WHERE email = ?";
+            PreparedStatement psCheck = conn.prepareStatement(checkQuery);
+            psCheck.setString(1, DEFAULT_ADMIN_EMAIL);
+            ResultSet rs = psCheck.executeQuery();
 
-        try {
-            // Load driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            Connection conn = DriverManager.getConnection(url, username, password);
-            String sql = "SELECT * FROM users WHERE email=? AND password=?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-
-            pst.setString(1, email);
-            pst.setString(2, pass);
-
-            ResultSet rs = pst.executeQuery();
-
-            if (rs.next()) {
-                user = new User();
-                user.setId(rs.getInt("id"));
-                user.setFullName(rs.getString("full_name"));
-                user.setEmail(rs.getString("email"));
-                user.setPassword(rs.getString("password"));
-                user.setPhone(rs.getString("phone"));
-                user.setAddress(rs.getString("address"));
-                user.setRole(rs.getString("role"));
+            if (!rs.next()) { // admin does not exist
+                // Insert default admin
+                String insert = "INSERT INTO admin (full_name, email, password, role) VALUES (?, ?, ?, ?)";
+                PreparedStatement psInsert = conn.prepareStatement(insert);
+                psInsert.setString(1, DEFAULT_ADMIN_NAME);
+                psInsert.setString(2, DEFAULT_ADMIN_EMAIL);
+                psInsert.setString(3, password); 
+                psInsert.setString(4, "admin");
+                psInsert.executeUpdate();
+                System.out.println("Default admin inserted successfully.");
+            } else {
+                System.out.println("Default admin already exists.");
             }
 
-            rs.close();
-            pst.close();
-            conn.close();
-
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Error inserting admin: " + e.getMessage());
+        }
+    }
+       
+
+    public User getUserByEmailAndPassword(String email, String pass) {
+        
+        // Hash the entered password
+        String hashedPass = PasswordUtils.hashPassword(pass);
+
+        // Check default admin credentials
+        if (email.equals(DEFAULT_ADMIN_EMAIL) && hashedPass.equals(password)) {
+            User user = new User();
+            user.setId(DEFAULT_ADMIN_ID);
+            user.setFullName(DEFAULT_ADMIN_NAME);
+            user.setEmail(DEFAULT_ADMIN_EMAIL);
+            user.setRole("admin");
+
+            return user;
         }
 
-        return user;
+        // Return null if credentials are incorrect
+        return null;
     }
 }

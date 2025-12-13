@@ -22,7 +22,6 @@ public class Login extends javax.swing.JFrame {
         pass_input.setEchoChar('*');
         // Initialize the controller and pass this view to it
         loginController = new LoginController(this);
-         
         
     }
     
