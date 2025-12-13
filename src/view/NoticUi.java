@@ -267,8 +267,9 @@ public class NoticUi extends javax.swing.JFrame {
         // TODO add your handling code here:
         String text = notice_txt.getText().trim();
 
-        NoticeController controller = new NoticeController();
-        controller.saveNotice(text);
+        controller.NoticeController noticeController = new controller.NoticeController();
+        noticeController.saveNotice(text);
+
     }//GEN-LAST:event_notice_post_btnActionPerformed
 
     private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed

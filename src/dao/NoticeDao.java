@@ -24,7 +24,7 @@ public class NoticeDao {
 
     public boolean postNotice(NoticeModel notice) {
 
-        // Check empty input
+        
         if (notice.getMessage() == null || notice.getMessage().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null,
                     "Notice cannot be empty!",
@@ -33,7 +33,7 @@ public class NoticeDao {
             return false;
         }
 
-        // Confirm dialog
+        
         int confirm = JOptionPane.showConfirmDialog(
                 null,
                 "Are you sure?",
@@ -49,7 +49,7 @@ public class NoticeDao {
             return false;
         }
 
-        // Insert into DB
+        
         String sql = "INSERT INTO notices (message) VALUES (?)";
         Connection conn = null;
 
