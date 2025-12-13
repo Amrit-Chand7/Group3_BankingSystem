@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.AddStaffController;
+import java.awt.Color;
+
 
 /**
  *
@@ -17,6 +20,11 @@ public class AddEmployee extends javax.swing.JFrame {
      */
     public AddEmployee() {
         initComponents();
+        // Make the "Add Employee" button blue when this window opens
+        add_employee_btn1.setBackground(new Color(0, 125, 234)); 
+        add_employee_btn1.setForeground(Color.WHITE);            
+        add_employee_btn1.setOpaque(true);                    
+        add_employee_btn1.setBorderPainted(false);   
     }
 
     /**
@@ -49,9 +57,11 @@ public class AddEmployee extends javax.swing.JFrame {
         emp_pass_txt = new javax.swing.JTextField();
         emp_email_txt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        emp_address_txt = new javax.swing.JTextField();
+        roleLabel = new javax.swing.JLabel();
+        emp_role_txt = new javax.swing.JTextField();
         emp_number_txt = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        emp_address_txt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -238,14 +248,14 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Password");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Address");
+        roleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        roleLabel.setText("User Role");
 
-        emp_address_txt.setBackground(new java.awt.Color(147, 181, 211));
-        emp_address_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        emp_address_txt.addActionListener(new java.awt.event.ActionListener() {
+        emp_role_txt.setBackground(new java.awt.Color(147, 181, 211));
+        emp_role_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        emp_role_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_address_txtActionPerformed(evt);
+                emp_role_txtActionPerformed(evt);
             }
         });
 
@@ -254,6 +264,17 @@ public class AddEmployee extends javax.swing.JFrame {
         emp_number_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emp_number_txtActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("Address");
+
+        emp_address_txt.setBackground(new java.awt.Color(147, 181, 211));
+        emp_address_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        emp_address_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emp_address_txtActionPerformed(evt);
             }
         });
 
@@ -273,13 +294,15 @@ public class AddEmployee extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel7)
+                            .addComponent(roleLabel))
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emp_role_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emp_number_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emp_pass_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emp_address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emp_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(emp_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emp_address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(75, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -289,7 +312,7 @@ public class AddEmployee extends javax.swing.JFrame {
                         .addGap(169, 169, 169))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(emp_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(133, 133, 133))))
+                        .addGap(132, 132, 132))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,20 +332,24 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(emp_pass_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(emp_number_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emp_number_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emp_address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(44, 44, 44)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emp_role_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roleLabel))
+                .addGap(36, 36, 36)
                 .addComponent(emp_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         pic_outside_panel.add(jPanel1);
-        jPanel1.setBounds(580, 120, 570, 590);
+        jPanel1.setBounds(580, 90, 570, 650);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -361,6 +388,31 @@ public class AddEmployee extends javax.swing.JFrame {
 
     private void emp_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_add_btnActionPerformed
         // TODO add your handling code here:
+        // 1. Get input values from text fields
+        String fullName = emp_name_txt.getText();
+        String email = emp_email_txt.getText();
+        String password = emp_pass_txt.getText(); // for JPasswordField
+        String phone = emp_number_txt.getText();
+        String address = emp_address_txt.getText();
+        String role = emp_role_txt.getText();
+        
+        // 2. Create controller instance
+        AddStaffController controller = new AddStaffController();
+
+        // 3. Call controller to add employee
+        boolean success = controller.addEmployee(fullName, email, password, phone, address, role);
+        
+        if(success) {
+            //Clear fields
+            emp_name_txt.setText("");
+            emp_email_txt.setText("");
+            emp_pass_txt.setText("");
+            emp_number_txt.setText("");
+            emp_address_txt.setText("");
+            emp_role_txt.setText("");
+        }
+
+        
     }//GEN-LAST:event_emp_add_btnActionPerformed
 
     private void emp_pass_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_pass_txtActionPerformed
@@ -375,13 +427,17 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_add_employee_btn1ActionPerformed
 
-    private void emp_address_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_address_txtActionPerformed
+    private void emp_role_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_role_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emp_address_txtActionPerformed
+    }//GEN-LAST:event_emp_role_txtActionPerformed
 
     private void emp_number_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_number_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emp_number_txtActionPerformed
+
+    private void emp_address_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_address_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emp_address_txtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -420,6 +476,7 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JTextField emp_name_txt;
     private javax.swing.JTextField emp_number_txt;
     private javax.swing.JTextField emp_pass_txt;
+    private javax.swing.JTextField emp_role_txt;
     private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
@@ -427,11 +484,12 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
     private javax.swing.JPanel pic_outside_panel;
+    private javax.swing.JLabel roleLabel;
     private javax.swing.JPanel skyblue_panel;
     // End of variables declaration//GEN-END:variables
 }

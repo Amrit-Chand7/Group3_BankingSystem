@@ -310,6 +310,10 @@ public class AdminUi extends javax.swing.JFrame {
 
     private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed
         // TODO add your handling code here:
+        // Create the new Add Employee window
+        AddEmployee addEmpWindow = new AddEmployee();
+        addEmpWindow.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_add_employee_btn1ActionPerformed
 
     /**
