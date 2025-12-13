@@ -6,6 +6,7 @@ package dao;
 import model.AddStaffModel;
 import java.sql.*;
 import Database.MySqlConnection;
+import static dao.PasswordUtils.hashPassword;
 /**
  *
  * @author amritchand
@@ -27,7 +28,11 @@ public class AddStaffDao {
             
             stmt.setString(1, employee.getEmFullName());
             stmt.setString(2, employee.getEmEmail());
-            stmt.setString(3, employee.getEmPassword());
+            
+            // Hash password before saving
+            String hashedPassword = hashPassword(employee.getEmPassword());
+            
+            stmt.setString(3, hashedPassword);
             stmt.setString(4, employee.getEmPhoneNumber());
             stmt.setString(5, employee.getEmAddress());
             stmt.setString(6, employee.getEmRole());
