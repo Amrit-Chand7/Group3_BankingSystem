@@ -8,14 +8,14 @@ package view;
  *
  * @author amritchand
  */
-public class delete_empy extends javax.swing.JFrame {
+public class DeleteEmp extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(delete_empy.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DeleteEmp.class.getName());
 
     /**
      * Creates new form AdminUi
      */
-    public delete_empy() {
+    public DeleteEmp() {
         initComponents();
     }
 
@@ -347,7 +347,7 @@ public class delete_empy extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new delete_empy().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new DeleteEmp().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -8,14 +8,14 @@ package view;
  *
  * @author amritchand
  */
-public class password_changeUI extends javax.swing.JFrame {
+public class PassChangeUi extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(password_changeUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PassChangeUi.class.getName());
 
     /**
      * Creates new form AdminUi
      */
-    public password_changeUI() {
+    public PassChangeUi() {
         initComponents();
     }
 
@@ -357,7 +357,7 @@ public class password_changeUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new password_changeUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new PassChangeUi().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
