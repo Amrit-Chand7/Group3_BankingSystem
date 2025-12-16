@@ -15,7 +15,7 @@ import static dao.PasswordUtils.hashPassword;
 
 public class AddStaffDao {
 
-    private MySqlConnection db = new MySqlConnection();
+    private final MySqlConnection db = new MySqlConnection();
 
     // SQL queries
     private final String INSERT_EMPLOYEE = "INSERT INTO employee (em_full_name, em_email, em_password, em_phone_number, em_address, em_role) VALUES (?, ?, ?, ?, ?, ?)";
