@@ -18,14 +18,14 @@ import static dao.PasswordUtils.hashPassword;
 public class ChangePassDao {
     
     private final MySqlConnection db = new MySqlConnection();
-    public boolean verifyEmail( String empEmail) {
+    public boolean verifyEmail( String adminEmail) {
 
-        String sql = "SELECT 1 FROM employee WHERE em_email = ?";
+        String sql = "SELECT 1 FROM admin WHERE email = ?";
 
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, empEmail);
+            ps.setString(1, adminEmail);
             ResultSet rs = ps.executeQuery();
 
             // If a record exists, email is valid
@@ -38,16 +38,16 @@ public class ChangePassDao {
     }
     
     // Verify current password
-    public boolean verifyCurrentPassword(String empEmail, String currentPass) {
-        String sql = "SELECT em_password FROM employee WHERE em_email = ?";
+    public boolean verifyCurrentPassword(String adminEmail, String currentPass) {
+        String sql = "SELECT password FROM admin WHERE email = ?";
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, empEmail);
+            ps.setString(1, adminEmail);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                String dbHashedPass = rs.getString("em_password");
+                String dbHashedPass = rs.getString("password");
                 return dbHashedPass.equals(hashPassword(currentPass));
             }
 
@@ -58,13 +58,13 @@ public class ChangePassDao {
     }
     
     // Update password
-    public boolean updatePassword(String empEmail, String newPass) {
-        String sql = "UPDATE employee SET em_password = ? WHERE em_email = ?";
+    public boolean updatePassword(String adminEmail, String newPass) {
+        String sql = "UPDATE admin SET password = ? WHERE email = ?";
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, hashPassword(newPass));
-            ps.setString(2, empEmail);
+            ps.setString(2, adminEmail);
             return ps.executeUpdate() == 1;
 
         } catch (SQLException e) {

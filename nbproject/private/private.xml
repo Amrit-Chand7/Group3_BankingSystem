@@ -13,6 +13,15 @@
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/AddStaffController.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/AddStaffDao.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/ChangePassDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/model/ChangePassModel.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/model/NoticeModel.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/model/AddStaffModel.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/Database/MySqlConnection.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/PasswordUtils.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/demo.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/NoticeDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/demo.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/model/demo.java</file>
         </group>
     </open-files>
 </project-private>

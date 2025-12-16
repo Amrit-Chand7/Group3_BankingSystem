@@ -281,7 +281,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="emp_email_label" min="-2" pref="193" max="-2" attributes="0"/>
+                                  <Component id="admin_email_label" min="-2" pref="193" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -301,7 +301,7 @@
                           <Component id="new_pass" pref="210" max="32767" attributes="0"/>
                           <Component id="confirm_pass" max="32767" attributes="0"/>
                           <Component id="current_pass" max="32767" attributes="0"/>
-                          <Component id="emp_email_text1" alignment="1" max="32767" attributes="0"/>
+                          <Component id="admin_email_text1" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -327,8 +327,8 @@
                       <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace pref="52" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emp_email_text1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="emp_email_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="admin_email_text1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="admin_email_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -442,15 +442,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="new_passActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="emp_email_label">
+            <Component class="javax.swing.JLabel" name="admin_email_label">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Employee Email"/>
+                <Property name="text" type="java.lang.String" value="Admin Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="emp_email_text1">
+            <Component class="javax.swing.JTextField" name="admin_email_text1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d3" green="b5" red="93" type="rgb"/>
@@ -460,7 +460,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emp_email_text1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="admin_email_text1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

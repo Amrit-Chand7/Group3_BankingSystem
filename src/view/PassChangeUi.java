@@ -49,8 +49,8 @@ public class PassChangeUi extends javax.swing.JFrame {
         change_btn = new javax.swing.JButton();
         confirm_pass = new javax.swing.JTextField();
         new_pass = new javax.swing.JTextField();
-        emp_email_label = new javax.swing.JLabel();
-        emp_email_text1 = new javax.swing.JTextField();
+        admin_email_label = new javax.swing.JLabel();
+        admin_email_text1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -234,14 +234,14 @@ public class PassChangeUi extends javax.swing.JFrame {
             }
         });
 
-        emp_email_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        emp_email_label.setText("Employee Email");
+        admin_email_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        admin_email_label.setText("Admin Email");
 
-        emp_email_text1.setBackground(new java.awt.Color(147, 181, 211));
-        emp_email_text1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        emp_email_text1.addActionListener(new java.awt.event.ActionListener() {
+        admin_email_text1.setBackground(new java.awt.Color(147, 181, 211));
+        admin_email_text1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        admin_email_text1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_email_text1ActionPerformed(evt);
+                admin_email_text1ActionPerformed(evt);
             }
         });
 
@@ -254,7 +254,7 @@ public class PassChangeUi extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(emp_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(admin_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(24, 24, 24))))
@@ -268,7 +268,7 @@ public class PassChangeUi extends javax.swing.JFrame {
                     .addComponent(new_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(confirm_pass)
                     .addComponent(current_pass)
-                    .addComponent(emp_email_text1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(admin_email_text1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(187, Short.MAX_VALUE)
@@ -287,8 +287,8 @@ public class PassChangeUi extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emp_email_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emp_email_label))
+                    .addComponent(admin_email_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admin_email_label))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(current_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,7 +348,7 @@ public class PassChangeUi extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         // 1. Get input values from text fields
-        String empEmail = emp_email_text1.getText();
+        String adminEmail = admin_email_text1.getText();
         String currentPass = current_pass.getText();
         String newPass = new_pass.getText();
         String confirmPass = confirm_pass.getText();
@@ -358,11 +358,11 @@ public class PassChangeUi extends javax.swing.JFrame {
         PassChangeController passController = new PassChangeController();
 
         // 3. Call controller to add employee
-        boolean done = passController.changePassword(empEmail, currentPass, newPass, confirmPass);
+        boolean done = passController.changePassword(adminEmail, currentPass, newPass, confirmPass);
         
         if(done) {
             //Clear fields
-            emp_email_text1.setText("");
+            admin_email_text1.setText("");
             current_pass.setText("");
             new_pass.setText("");
             confirm_pass.setText("");
@@ -381,9 +381,9 @@ public class PassChangeUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_add_employee_btn1ActionPerformed
 
-    private void emp_email_text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_email_text1ActionPerformed
+    private void admin_email_text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_email_text1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emp_email_text1ActionPerformed
+    }//GEN-LAST:event_admin_email_text1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,6 +412,8 @@ public class PassChangeUi extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_employee_btn1;
+    private javax.swing.JLabel admin_email_label;
+    private javax.swing.JTextField admin_email_text1;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton change_btn;
@@ -419,8 +421,6 @@ public class PassChangeUi extends javax.swing.JFrame {
     private javax.swing.JButton create_notice_btn;
     private javax.swing.JTextField current_pass;
     private javax.swing.JButton dashboard_btn;
-    private javax.swing.JLabel emp_email_label;
-    private javax.swing.JTextField emp_email_text1;
     private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;

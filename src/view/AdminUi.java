@@ -4,10 +4,6 @@
  */
 package view;
 
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
-
 /**
  *
  * @author amritchand
@@ -15,40 +11,12 @@ import javax.swing.JPopupMenu;
 public class AdminUi extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminUi.class.getName());
-    private JPopupMenu profileMenu;
-    private JMenuItem updatePassItem;
-    private JMenuItem changePassItem;
-    
-    private void initProfileMenu() {
-        profileMenu = new JPopupMenu();
-
-        updatePassItem = new JMenuItem("Update Password");
-        changePassItem = new JMenuItem("Change Password");
-
-        // Add items to popup menu
-        profileMenu.add(updatePassItem);
-        profileMenu.add(changePassItem);
-
-        // Add action listeners
-        updatePassItem.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Update Password clicked");
-        // TODO: Put your Update Password logic here
-        });
-
-        changePassItem.addActionListener(e -> {
-        PassChangeUi passWindow1 = new PassChangeUi();
-        passWindow1.setVisible(true);
-    });
-}
-
-
 
     /**
      * Creates new form AdminUi
      */
     public AdminUi() {
         initComponents();
-        initProfileMenu(); // initialize popup menu
     }
 
     /**
@@ -330,8 +298,7 @@ public class AdminUi extends javax.swing.JFrame {
 
     private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
         // TODO add your handling code here:
-        // Show popup menu right below the profile button
-        profileMenu.show(profile_btn, 0, profile_btn.getHeight());
+        
     }//GEN-LAST:event_profile_btnActionPerformed
 
     private void search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_txtActionPerformed
