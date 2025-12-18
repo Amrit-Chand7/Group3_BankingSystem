@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package all;
+package view;
+import controller.DepositController;
 
 /**
  *
- * @author amritchand
+ * @author jenis
  */
 public class DepositMoney extends javax.swing.JFrame {
     
@@ -229,6 +230,11 @@ public class DepositMoney extends javax.swing.JFrame {
         deposit_done_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         deposit_done_btn.setForeground(new java.awt.Color(255, 255, 255));
         deposit_done_btn.setText("Deposit");
+        deposit_done_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deposit_done_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -319,6 +325,23 @@ public class DepositMoney extends javax.swing.JFrame {
     private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_customer_add_btnActionPerformed
+
+    private void deposit_done_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_done_btnActionPerformed
+        // TODO add your handling code here:
+        // get input from text fields
+        String accountNumber = account_nub_txt.getText();
+        String amount = deposit_amount_txt.getText();
+
+        // create controller and deposit
+        DepositController controller = new DepositController();
+        boolean success = controller.depositMoney(accountNumber, amount);
+
+        if (success) {
+            // clear text fields after successful deposit
+            account_nub_txt.setText("");
+            deposit_amount_txt.setText("");
+        }         
+    }//GEN-LAST:event_deposit_done_btnActionPerformed
 
     /**
      * @param args the command line arguments

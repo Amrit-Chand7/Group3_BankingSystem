@@ -427,6 +427,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Deposit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deposit_done_btnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

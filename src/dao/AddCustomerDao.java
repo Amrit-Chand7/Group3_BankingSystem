@@ -17,6 +17,7 @@ public class AddCustomerDao {
 
     // SQL queries with exact column names
     private final String INSERT_CUSTOMER = "INSERT INTO customers (full_name1, email1, dob1, phone1, address1, id_proof1, account_type1, account_number1) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private final String INSERT_CUSTOMER1 = "INSERT INTO accounts (account_number) VALUES (?)";
     private final String CHECK_EMAIL = "SELECT 1 FROM customers WHERE email1 = ? LIMIT 1";
     private final String CHECK_ACCOUNT_NUMBER = "SELECT 1 FROM customers WHERE account_number1 = ? LIMIT 1";
 
@@ -33,9 +34,24 @@ public class AddCustomerDao {
             stmt.setString(6, customer.getIdProof());
             stmt.setString(7, customer.getAccountType());
             stmt.setString(8, customer.getAccountNumber());
+          
 
             stmt.executeUpdate();
+            
         }
+       
+        
+    }
+    public void addCustomer1(AddCustomerModel accounts) throws SQLException {
+        try (Connection conn = db.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(INSERT_CUSTOMER1)) {
+
+            stmt.setString(1, accounts.getAccountNumber());
+          
+
+            stmt.executeUpdate();
+            
+        } 
     }
 
     // Check if email already exists

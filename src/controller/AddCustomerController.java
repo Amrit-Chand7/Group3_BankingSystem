@@ -78,6 +78,7 @@ public class AddCustomerController {
 
                 // 5. Add to database
                 addCustomerDao.addCustomer(customer);
+                addCustomerDao.addCustomer1(customer);
 
                 JOptionPane.showMessageDialog(null, "Customer added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 return true;
