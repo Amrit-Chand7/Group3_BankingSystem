@@ -4,21 +4,37 @@
  */
 package view;
 
-import javax.swing.JOptionPane;
+import java.awt.Font;
+import javax.swing.JTable;
 
 /**
  *
  * @author amritchand
  */
-public class EmployeeDashboard extends javax.swing.JFrame {
+public class CustomerAccManage extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CustomerAccManage.class.getName());
 
     /**
      * Creates new form AdminUi
      */
-    public EmployeeDashboard() {
+    public CustomerAccManage() {
         initComponents();
+        
+        // Lock JTable settings
+        jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jTable1.setRowHeight(25);
+
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(150);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(180);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(194);
+        jTable1.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
+
+
     }
 
     /**
@@ -43,12 +59,13 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         fund_transfer_btn = new javax.swing.JButton();
         deposit_btn = new javax.swing.JButton();
         customer_add_btn = new javax.swing.JButton();
-        logout_btn = new javax.swing.JButton();
-        logout_txt = new javax.swing.JLabel();
-        profile_btn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        customer_search_txt = new javax.swing.JTextField();
-        emp_search_btn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        search_customer_txt = new javax.swing.JTextField();
+        search_customer_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,7 +114,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
             blue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blue_panelLayout.createSequentialGroup()
                 .addComponent(logo_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bms_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(462, 462, 462))
         );
@@ -210,88 +227,102 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         pic_outside_panel.add(skyblue_panel);
         skyblue_panel.setBounds(0, 0, 290, 1800);
 
-        logout_btn.setBackground(new java.awt.Color(147, 181, 211));
-        logout_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
-        logout_btn.setBorder(null);
-        logout_btn.setContentAreaFilled(false);
-        logout_btn.setBorderPainted(false);
-        logout_btn.setFocusPainted(false);
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        logout_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                logout_btn.setSize(logout_btn.getWidth() - 2, logout_btn.getHeight() - 2);
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
+        jLabel1.setText("Customer Accounts");
+
+        jTable1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Full Name", "Account Number", "Phone Number", "Account Type"
             }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                logout_btn.setSize(logout_btn.getWidth() + 2, logout_btn.getHeight() + 2);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+        jScrollPane2.setViewportView(jTable1);
+
+        jButton2.setBackground(new java.awt.Color(179, 28, 221));
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        pic_outside_panel.add(logout_btn);
-        logout_btn.setBounds(1400, 120, 70, 60);
 
-        logout_txt.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        logout_txt.setText("   Log Out");
-        pic_outside_panel.add(logout_txt);
-        logout_txt.setBounds(1400, 180, 70, 20);
-
-        profile_btn.setBackground(new java.awt.Color(147, 181, 211));
-        profile_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profile_btn.setContentAreaFilled(false);
-        profile_btn.setBorderPainted(false);
-        profile_btn.setFocusPainted(false);
-
-        profile_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                profile_btn.setSize(profile_btn.getWidth() - 2, profile_btn.getHeight() - 2);
-            }
-
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                profile_btn.setSize(profile_btn.getWidth() + 2, profile_btn.getHeight() + 2);
-            }
-        });
-        profile_btn.addActionListener(new java.awt.event.ActionListener() {
+        search_customer_txt.setBackground(new java.awt.Color(217, 217, 217));
+        search_customer_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        search_customer_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profile_btnActionPerformed(evt);
+                search_customer_txtActionPerformed(evt);
             }
         });
-        pic_outside_panel.add(profile_btn);
-        profile_btn.setBounds(1400, 10, 70, 70);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel2.setText(" Profile");
-        pic_outside_panel.add(jLabel2);
-        jLabel2.setBounds(1410, 80, 50, 20);
-
-        customer_search_txt.setBackground(new java.awt.Color(217, 217, 217));
-        customer_search_txt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        customer_search_txt.addActionListener(new java.awt.event.ActionListener() {
+        search_customer_btn.setBackground(new java.awt.Color(147, 181, 211));
+        search_customer_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        search_customer_btn.setText("Search");
+        search_customer_btn.setBorder(null);
+        search_customer_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customer_search_txtActionPerformed(evt);
+                search_customer_btnActionPerformed(evt);
             }
         });
-        pic_outside_panel.add(customer_search_txt);
-        customer_search_txt.setBounds(580, 70, 380, 50);
 
-        emp_search_btn.setBackground(new java.awt.Color(147, 181, 211));
-        emp_search_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        emp_search_btn.setText("Search");
-        emp_search_btn.setBorder(null);
-        emp_search_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_search_btnActionPerformed(evt);
-            }
-        });
-        pic_outside_panel.add(emp_search_btn);
-        emp_search_btn.setBounds(970, 70, 100, 50);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addComponent(search_customer_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(search_customer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(422, 422, 422)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(search_customer_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_customer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        pic_outside_panel.add(jPanel1);
+        jPanel1.setBounds(400, 70, 970, 650);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,50 +355,6 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_history_btnActionPerformed
 
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logout_btnActionPerformed
-
-    private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profile_btnActionPerformed
-
-    private void customer_search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_search_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customer_search_txtActionPerformed
-
-    private void emp_search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_search_btnActionPerformed
-        // TODO add your handling code here:
-        
-        // Get the value from serch field
-        String searchtxt = customer_search_txt.getText();
-        
-        if (searchtxt.isEmpty()) {
-            JOptionPane.showMessageDialog(
-                this,
-                "Search field cannot be empty.",
-                "Input Error",
-                JOptionPane.WARNING_MESSAGE
-            );
-            return;
-        }
-        
-        if (searchtxt.equalsIgnoreCase("customer")){
-            CustomerAccManage customerWindow = new CustomerAccManage();
-            customerWindow.setVisible(true);
-           
-        }
-        else {
-           JOptionPane.showMessageDialog(
-               this,
-               "No result found",
-               "Search Error",
-               JOptionPane.ERROR_MESSAGE
-           );
-        }
-       
-    }//GEN-LAST:event_emp_search_btnActionPerformed
-
     private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fund_transfer_btnActionPerformed
@@ -379,6 +366,18 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_customer_add_btnActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void search_customer_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_customer_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_customer_txtActionPerformed
+
+    private void search_customer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_customer_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_customer_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,28 +401,29 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new EmployeeDashboard().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new CustomerAccManage().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton customer_add_btn;
-    private javax.swing.JTextField customer_search_txt;
     private javax.swing.JButton deposit_btn;
     private javax.swing.JButton emp_dashboard_btn;
-    private javax.swing.JButton emp_search_btn;
     private javax.swing.JButton fund_transfer_btn;
     private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
-    private javax.swing.JButton logout_btn;
-    private javax.swing.JLabel logout_txt;
     private javax.swing.JButton notic_btn;
     private javax.swing.JPanel pic_outside_panel;
-    private javax.swing.JButton profile_btn;
+    private javax.swing.JButton search_customer_btn;
+    private javax.swing.JTextField search_customer_txt;
     private javax.swing.JPanel skyblue_panel;
     // End of variables declaration//GEN-END:variables
 }
