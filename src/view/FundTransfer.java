@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import controller.TransferController;
 /**
  *
  * @author amritchand
@@ -11,7 +11,8 @@ package view;
 public class FundTransfer extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FundTransfer.class.getName());
-
+    
+    private final TransferController transferController = new TransferController();
     /**
      * Creates new form AdminUi
      */
@@ -236,6 +237,11 @@ public class FundTransfer extends javax.swing.JFrame {
         transfer_done_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         transfer_done_btn.setForeground(new java.awt.Color(255, 255, 255));
         transfer_done_btn.setText("Transfer");
+        transfer_done_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transfer_done_btnActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel4.setText("Destination Account");
@@ -347,6 +353,23 @@ public class FundTransfer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_source_acc_txtActionPerformed
 
+    private void transfer_done_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transfer_done_btnActionPerformed
+        // TODO add your handling code here:
+        String source = source_acc_txt.getText().trim();
+        String dest = destination_acc_txt1.getText().trim();
+        String amountText = transfer_amm_txt.getText().trim();
+
+        boolean success = transferController.transferMoney(source, dest, amountText);
+
+        if (success) {
+            // Clear fields after successful transfer
+            source_acc_txt.setText("");
+            destination_acc_txt1.setText("");
+            transfer_amm_txt.setText("");
+            source_acc_txt.requestFocus();  // Ready for next transfer
+        }
+    }//GEN-LAST:event_transfer_done_btnActionPerformed
+   
     /**
      * @param args the command line arguments
      */
@@ -367,7 +390,16 @@ public class FundTransfer extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FundTransfer().setVisible(true));
     }
