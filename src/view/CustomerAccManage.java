@@ -9,14 +9,20 @@ import javax.swing.JTable;
 import controller.ManageCustomerController;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import model.AddCustomerModel;
+
 
 /**
  *
  * @author amritchand
  */
 public class CustomerAccManage extends javax.swing.JFrame {
+    
+    private javax.swing.JPopupMenu popupMenu;
+    private javax.swing.JMenuItem viewAccountItem;
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CustomerAccManage.class.getName());
 
@@ -40,6 +46,21 @@ public class CustomerAccManage extends javax.swing.JFrame {
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
         
         loadCustomerTable();// load all customers automatically
+        
+        popupMenu = new javax.swing.JPopupMenu();
+        viewAccountItem = new javax.swing.JMenuItem("View Account");
+        
+        // Background blue (#007DEA)
+        viewAccountItem.setOpaque(true);
+        viewAccountItem.setBackground(new java.awt.Color(0, 125, 234));
+
+        // Font color white
+        viewAccountItem.setForeground(java.awt.Color.WHITE);
+
+        // Font style
+        viewAccountItem.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+
+        popupMenu.add(viewAccountItem);
     }
     
     public void loadCustomerTable() {
@@ -270,6 +291,11 @@ public class CustomerAccManage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
 
         jButton2.setBackground(new java.awt.Color(179, 28, 221));
@@ -431,6 +457,21 @@ public class CustomerAccManage extends javax.swing.JFrame {
     }
 
     }//GEN-LAST:event_search_customer_btnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+                                          
+        if (SwingUtilities.isRightMouseButton(evt)) {
+
+            int row = jTable1.rowAtPoint(evt.getPoint());
+
+            if (row >= 0) {
+                jTable1.setRowSelectionInterval(row, row);
+                popupMenu.show(jTable1, evt.getX(), evt.getY());
+            }
+        }
+
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
