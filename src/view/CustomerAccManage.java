@@ -6,6 +6,11 @@ package view;
 
 import java.awt.Font;
 import javax.swing.JTable;
+import controller.ManageCustomerController;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.AddCustomerModel;
 
 /**
  *
@@ -33,9 +38,22 @@ public class CustomerAccManage extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(194);
         jTable1.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
-
-
+        
+        loadCustomerTable();// load all customers automatically
     }
+    
+    public void loadCustomerTable() {
+        ManageCustomerController controller = new ManageCustomerController();
+        List<AddCustomerModel> customers = controller.getAllCustomers();
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // clear old rows
+
+        for (AddCustomerModel c : customers) {
+            model.addRow(new Object[]{c.getFullName(), c.getPhone(), c.getAccountNumber(), c.getAccountType()});
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -241,7 +259,7 @@ public class CustomerAccManage extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Full Name", "Account Number", "Phone Number", "Account Type"
+                "Full Name", "Phone Number", "Account Number", "Account Type"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -377,6 +395,41 @@ public class CustomerAccManage extends javax.swing.JFrame {
 
     private void search_customer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_customer_btnActionPerformed
         // TODO add your handling code here:
+        
+        String searchtxt1 = search_customer_txt.getText();
+        
+        if (searchtxt1.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Search field cannot be empty.",
+                "Input Error",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+        ManageCustomerController controller = new ManageCustomerController();
+        boolean exists = controller.checkAccount(searchtxt1);
+        
+        if (exists) {
+            
+        // Load all customers and filter only the searched account
+        List<AddCustomerModel> customers = controller.getAllCustomers();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // clear table
+
+        for (AddCustomerModel c : customers) {
+            if (c.getAccountNumber().equals(searchtxt1) || c.getPhone().equals(searchtxt1)) {
+                model.addRow(new Object[]{
+                    c.getFullName(),
+                    c.getPhone(),
+                    c.getAccountNumber(),
+                    c.getAccountType()
+                });
+                break; // only one row, as account numbers are unique
+            }
+        }
+    }
+
     }//GEN-LAST:event_search_customer_btnActionPerformed
 
     /**

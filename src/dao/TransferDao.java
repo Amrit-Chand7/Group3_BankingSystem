@@ -12,7 +12,7 @@ import java.sql.*;
  * @author Anup Kunwar
  */
 public class TransferDao {
-    private final MySqlConnection db = MySqlConnection.getInstance();
+    private final MySqlConnection db =  new MySqlConnection();
 
     public boolean isAccountExists(String accountNumber) {
         String query = "SELECT 1 FROM accounts WHERE account_number = ?";
