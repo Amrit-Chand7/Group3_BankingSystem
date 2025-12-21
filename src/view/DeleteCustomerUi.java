@@ -4,11 +4,15 @@
  */
 package view;
 
+import controller.FetchDetailsController;
+
 /**
  *
  * @author jenis
  */
 public class DeleteCustomerUi extends javax.swing.JFrame {
+    
+    FetchDetailsController controller = new FetchDetailsController();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DeleteCustomerUi.class.getName());
 
@@ -17,6 +21,35 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
      */
     public DeleteCustomerUi() {
         initComponents();
+    }
+    public DeleteCustomerUi(String accountNumber) {
+        initComponents();
+        
+        customer_full_name1.setEditable(false);
+        customer_email1_text.setEditable(false);
+        customer_address1.setEditable(false);
+        customer_phone1.setEditable(false);
+        customer_dob1.setEditable(false);
+        customer_acc_type1.setEditable(false);
+        customer_acc_number1.setEditable(false);
+        customer_id1.setEditable(false);
+        customer_balance1.setEditable(false);
+        
+        // Fetch data from database
+        String[] details = controller.getfetchByAccountNumber(accountNumber);
+        
+        // Populate text fields
+        customer_full_name1.setText(details[0]);
+        customer_email1_text.setText(details[1]);
+        customer_address1.setText(details[2]);
+        customer_phone1.setText(details[3]);
+        customer_dob1.setText(details[4]);
+        customer_acc_type1.setText(details[5]);
+        customer_acc_number1.setText(details[6]);
+        customer_id1.setText(details[7]);
+        customer_balance1.setText(details[8]);
+        
+
     }
 
     /**
@@ -277,6 +310,11 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         customer_balance1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         customer_acc_number1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        customer_acc_number1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customer_acc_number1ActionPerformed(evt);
+            }
+        });
 
         customer_delete_btn.setBackground(new java.awt.Color(0, 125, 234));
         customer_delete_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -365,9 +403,9 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
                     .addComponent(customer_address1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(customer_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(customer_phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -376,7 +414,6 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
                             .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(customer_dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
                         .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(customer_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -459,6 +496,10 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         // TODO add your handling code here:
    
     }//GEN-LAST:event_customer_delete_btnActionPerformed
+
+    private void customer_acc_number1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_acc_number1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customer_acc_number1ActionPerformed
 
     /**
      * @param args the command line arguments

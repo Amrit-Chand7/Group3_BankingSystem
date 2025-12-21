@@ -632,6 +632,9 @@
                       <Font name="Helvetica Neue" size="18" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customer_acc_number1ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="customer_delete_btn">
                   <Properties>

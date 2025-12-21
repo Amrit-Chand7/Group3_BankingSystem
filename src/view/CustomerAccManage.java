@@ -22,6 +22,8 @@ public class CustomerAccManage extends javax.swing.JFrame {
     
     private javax.swing.JPopupMenu popupMenu;
     private javax.swing.JMenuItem viewAccountItem;
+    // To store clicked row index
+    private int clickedRow = -1;
 
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CustomerAccManage.class.getName());
@@ -61,6 +63,8 @@ public class CustomerAccManage extends javax.swing.JFrame {
         viewAccountItem.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
 
         popupMenu.add(viewAccountItem);
+        viewAccountItem.addActionListener(e -> openAccountDetails());
+
     }
     
     public void loadCustomerTable() {
@@ -74,6 +78,27 @@ public class CustomerAccManage extends javax.swing.JFrame {
             model.addRow(new Object[]{c.getFullName(), c.getPhone(), c.getAccountNumber(), c.getAccountType()});
         }
     }
+    private String openAccountDetails() {
+        
+        // Safety check
+        if (clickedRow == -1) {
+            JOptionPane.showMessageDialog(this, "No row selected");
+            return null;
+        }
+
+        int row = clickedRow;
+
+
+        // Account Number is column index 2
+        String accountNum = jTable1.getValueAt(row, 2).toString();
+
+        DeleteCustomerUi accountDetails = new DeleteCustomerUi(accountNum);
+        accountDetails.setVisible(true);
+        System.out.print("Check :Hello ! Good Morning, This is your bank account number : "+ accountNum);
+        return accountNum;
+
+    }
+
 
 
     /**
@@ -462,12 +487,18 @@ public class CustomerAccManage extends javax.swing.JFrame {
         // TODO add your handling code here:
                                           
         if (SwingUtilities.isRightMouseButton(evt)) {
+            
 
-            int row = jTable1.rowAtPoint(evt.getPoint());
-
-            if (row >= 0) {
-                jTable1.setRowSelectionInterval(row, row);
+            // Get row index where mouse was clicked
+            clickedRow = jTable1.rowAtPoint(evt.getPoint());
+            
+            // If click is on a valid row
+            if (clickedRow >= 0) {
+                // Select that row
+                jTable1.setRowSelectionInterval(clickedRow, clickedRow);
+                // Show popup menu at mouse position
                 popupMenu.show(jTable1, evt.getX(), evt.getY());
+
             }
         }
 
