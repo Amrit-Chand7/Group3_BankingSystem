@@ -5,7 +5,7 @@
 package view;
 
 import controller.FetchDetailsController;
-
+import controller.DeleteCustomerController;
 /**
  *
  * @author jenis
@@ -494,11 +494,22 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
 
     private void customer_delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_delete_btnActionPerformed
         // TODO add your handling code here:
-   
+        String accNum1 = customer_acc_number1.getText();
+        String accBalance = customer_balance1.getText();
+        
+        DeleteCustomerController delete1 = new DeleteCustomerController();
+        boolean success2 = delete1.confirmAndDelete(accNum1,accBalance);
+        if (success2){
+            
+            this.dispose();
+            CustomerAccManage customerList1 = new CustomerAccManage();
+            customerList1.setVisible(true);
+        }
     }//GEN-LAST:event_customer_delete_btnActionPerformed
 
     private void customer_acc_number1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_acc_number1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_customer_acc_number1ActionPerformed
 
     /**
