@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.Font;
+import javax.swing.JTable;
+
 /**
  *
  * @author amritchand
@@ -17,6 +20,27 @@ public class TransactionHistory extends javax.swing.JFrame {
      */
     public TransactionHistory() {
         initComponents();
+        // Disable auto resize
+        jTable2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        // Lock header behavior
+        jTable2.getTableHeader().setReorderingAllowed(false);
+        jTable2.getTableHeader().setResizingAllowed(false);
+
+        // Row height
+        jTable2.setRowHeight(25);
+
+        // Column widths
+        jTable2.getColumnModel().getColumn(0).setPreferredWidth(150); // Transaction ID
+        jTable2.getColumnModel().getColumn(1).setPreferredWidth(200); // Account Number
+        jTable2.getColumnModel().getColumn(2).setPreferredWidth(155); // Amount
+        jTable2.getColumnModel().getColumn(3).setPreferredWidth(180); // Type
+        jTable2.getColumnModel().getColumn(4).setPreferredWidth(171); // Date
+
+        // Fonts
+        jTable2.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+        jTable2.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
+
     }
 
     /**
@@ -43,7 +67,8 @@ public class TransactionHistory extends javax.swing.JFrame {
         customer_add_btn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         transaction_txt = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -211,45 +236,52 @@ public class TransactionHistory extends javax.swing.JFrame {
         transaction_txt.setFont(new java.awt.Font("Helvetica Neue", 1, 28)); // NOI18N
         transaction_txt.setText("Transaction History");
 
-        jPanel2.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Transaction ID", "Account Number", "Amount", "Type", "Date"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
-        );
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(273, 273, 273)
+                .addGap(348, 348, 348)
                 .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(112, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(transaction_txt)
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
-        jPanel1.setBounds(470, 170, 830, 490);
+        jPanel1.setBounds(400, 150, 970, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -329,7 +361,8 @@ public class TransactionHistory extends javax.swing.JFrame {
     private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
     private javax.swing.JButton notic_btn;

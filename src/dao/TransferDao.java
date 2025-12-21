@@ -68,7 +68,7 @@ public class TransferDao {
             }
 
             // Log withdrawal (safe: only essential columns)
-            String insertWithdraw = "INSERT INTO transactions (account_number, amount, type) VALUES (?, ?, 'WITHDRAWAL')";
+            String insertWithdraw = "INSERT INTO transactions (account_number, amount, type) VALUES (?, ?, 'TRANSFER_OUT')";
             try (PreparedStatement ps = con.prepareStatement(insertWithdraw)) {
                 ps.setString(1, m.getSourceAccount());
                 ps.setDouble(2, m.getAmount());
@@ -76,7 +76,7 @@ public class TransferDao {
             }
 
             // Log deposit
-            String insertDeposit = "INSERT INTO transactions (account_number, amount, type) VALUES (?, ?, 'DEPOSIT')";
+            String insertDeposit = "INSERT INTO transactions (account_number, amount, type) VALUES (?, ?, 'TRANSFER_IN')";
             try (PreparedStatement ps = con.prepareStatement(insertDeposit)) {
                 ps.setString(1, m.getDestinationAccount());
                 ps.setDouble(2, m.getAmount());
