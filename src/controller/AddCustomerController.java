@@ -48,6 +48,16 @@ public class AddCustomerController {
             JOptionPane.showMessageDialog(null, "Phone number must be exactly 10 digits!", "Error", JOptionPane.ERROR_MESSAGE);
             return false;        
         }
+        // 4. Validate DOB format (ADD HERE)
+        if(!dob1.matches("\\d{4}-\\d{2}-\\d{2}")) {
+        JOptionPane.showMessageDialog(
+        null,
+        "Date of Birth must be in YYYY-MM-DD format (example: 2000-01-25)",
+        "Invalid Date",
+        JOptionPane.ERROR_MESSAGE
+        );
+        return false;
+}
         try {
             // 3. Check if email or account number already exists
             if(addCustomerDao.isEmailExists(email1)) {
@@ -90,6 +100,6 @@ public class AddCustomerController {
         } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Failed to add customer: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             return false;
-        }
+        }       
     }
 }
