@@ -4,6 +4,9 @@
  */
 
 package model;
+
+import java.sql.Timestamp;
+
 /**
  *
  * @author Anup Kunwar
@@ -11,6 +14,7 @@ package model;
 public class NoticeModel {
     private int id;
     private String message;
+    private Timestamp createdAt;
 
     public NoticeModel() {}
 
@@ -18,9 +22,10 @@ public class NoticeModel {
         this.message = message;
     }
 
-    public NoticeModel(int id, String message) {
+    public NoticeModel(int id, String message, Timestamp createdAt) {
         this.id = id;
         this.message = message;
+        this.createdAt = createdAt;
     }
 
     public int getId() {
@@ -30,6 +35,11 @@ public class NoticeModel {
     public String getMessage() {
         return message;
     }
+    
+    
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -37,5 +47,9 @@ public class NoticeModel {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+    
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 }

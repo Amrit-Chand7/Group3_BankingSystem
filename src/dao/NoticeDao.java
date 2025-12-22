@@ -8,7 +8,6 @@ package dao;
 import Database.MySqlConnection;
 import model.NoticeModel;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,59 +21,15 @@ public class NoticeDao {
 
     private final MySqlConnection db = new MySqlConnection();
 
-    public boolean postNotice(NoticeModel notice) {
+    private final String INSERT_NOTICE = "INSERT INTO notices (message) VALUES (?)";
 
-        
-        if (notice.getMessage() == null || notice.getMessage().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null,
-                    "Notice cannot be empty!",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
+    // Add a new notice
+    public void addNotice(NoticeModel notice) throws SQLException {
+        try (Connection conn = db.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(INSERT_NOTICE)) {
 
-        
-        int confirm = JOptionPane.showConfirmDialog(
-                null,
-                "Are you sure?",
-                "Confirm Notice Post",
-                JOptionPane.YES_NO_OPTION
-        );
-
-        if (confirm == JOptionPane.NO_OPTION) {
-            JOptionPane.showMessageDialog(null,
-                    "Notice posting cancelled.",
-                    "Cancelled",
-                    JOptionPane.INFORMATION_MESSAGE);
-            return false;
-        }
-
-        
-        String sql = "INSERT INTO notices (message) VALUES (?)";
-        Connection conn = null;
-
-        try {
-            conn = db.openconnection();
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, notice.getMessage());
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(null,
-                    "Notice posted successfully!",
-                    "Success",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            return true;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,
-                    "Database Error: " + e.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-            return false;
-
-        } finally {
-            db.closeConnection(conn);
+            stmt.setString(1, notice.getMessage());
+            stmt.executeUpdate();
         }
     }
 }
