@@ -181,17 +181,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="history_btn" max="32767" attributes="0"/>
-                          <Component id="dashboard_btn" max="32767" attributes="0"/>
-                          <Component id="add_employee_btn1" alignment="1" max="32767" attributes="0"/>
-                          <Component id="create_notice_btn" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="60" max="32767" attributes="0"/>
-========
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="65" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -203,7 +192,6 @@
                           <Component id="emp_dashboard_btn" min="-2" pref="178" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
->>>>>>>> employee:src/view/DepositMoney.form
                   </Group>
               </Group>
             </DimensionLayout>
@@ -220,17 +208,9 @@
                       <Component id="notic_btn" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="history_btn" min="-2" pref="48" max="-2" attributes="0"/>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="add_employee_btn1" min="-2" pref="48" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="create_notice_btn" min="-2" pref="48" max="-2" attributes="0"/>
-                      <EmptySpace pref="1173" max="32767" attributes="0"/>
-========
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="customer_add_btn" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace pref="1085" max="32767" attributes="0"/>
->>>>>>>> employee:src/view/DepositMoney.form
                   </Group>
               </Group>
             </DimensionLayout>
@@ -250,11 +230,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emp_dashboard_btnActionPerformed"/>
               </Events>
             </Component>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-            <Component class="javax.swing.JButton" name="create_notice_btn">
-========
             <Component class="javax.swing.JButton" name="notic_btn">
->>>>>>>> employee:src/view/DepositMoney.form
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -262,17 +238,10 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Helvetica Neue" size="12" style="1"/>
                 </Property>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                <Property name="text" type="java.lang.String" value="CREATE NOTICE"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="create_notice_btnActionPerformed"/>
-========
                 <Property name="text" type="java.lang.String" value="NOTICES"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="notic_btnActionPerformed"/>
->>>>>>>> employee:src/view/DepositMoney.form
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="history_btn">
@@ -289,17 +258,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="history_btnActionPerformed"/>
               </Events>
             </Component>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-            <Component class="javax.swing.JButton" name="add_employee_btn1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="CREATE EMP ACCOUNT"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_employee_btn1ActionPerformed"/>
-========
             <Component class="javax.swing.JButton" name="fund_transfer_btn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -340,7 +298,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customer_add_btnActionPerformed"/>
->>>>>>>> employee:src/view/DepositMoney.form
               </Events>
             </Component>
           </SubComponents>
@@ -358,11 +315,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-              <AbsoluteConstraints x="540" y="150" width="570" height="480"/>
-========
               <AbsoluteConstraints x="610" y="170" width="540" height="390"/>
->>>>>>>> employee:src/view/DepositMoney.form
             </Constraint>
           </Constraints>
 
@@ -370,35 +323,6 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="admin_email_label" min="-2" pref="193" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel2" alignment="1" min="-2" pref="193" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" pref="193" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="new_pass" pref="210" max="32767" attributes="0"/>
-                          <Component id="confirm_pass" max="32767" attributes="0"/>
-                          <Component id="current_pass" max="32767" attributes="0"/>
-                          <Component id="admin_email_text1" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-========
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
@@ -421,7 +345,6 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
->>>>>>>> employee:src/view/DepositMoney.form
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
@@ -433,39 +356,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="admin_email_text1" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="admin_email_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-========
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="64" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
->>>>>>>> employee:src/view/DepositMoney.form
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="account_nub_txt" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="new_pass" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="confirm_pass" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="change_btn" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-========
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
@@ -474,7 +371,6 @@
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="deposit_done_btn" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
->>>>>>>> employee:src/view/DepositMoney.form
                   </Group>
               </Group>
             </DimensionLayout>
@@ -488,22 +384,6 @@
                 <Property name="text" type="java.lang.String" value="Deposit Money"/>
               </Properties>
             </Component>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-            <Component class="javax.swing.JTextField" name="current_pass">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d3" green="b5" red="93" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="current_passActionPerformed"/>
-              </Events>
-            </Component>
-========
->>>>>>>> employee:src/view/DepositMoney.form
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -548,58 +428,7 @@
                 <Property name="text" type="java.lang.String" value="Deposit"/>
               </Properties>
               <Events>
-<<<<<<<< HEAD:src/view/PassChangeUi.form
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="change_btnActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="confirm_pass">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d3" green="b5" red="93" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm_passActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="new_pass">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d3" green="b5" red="93" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="new_passActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="admin_email_label">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Admin Email"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="admin_email_text1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d3" green="b5" red="93" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Helvetica Neue" size="18" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="admin_email_text1ActionPerformed"/>
-========
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deposit_done_btnActionPerformed"/>
->>>>>>>> employee:src/view/DepositMoney.form
               </Events>
             </Component>
           </SubComponents>
