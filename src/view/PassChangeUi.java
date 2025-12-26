@@ -366,6 +366,10 @@ public class PassChangeUi extends javax.swing.JFrame {
             current_pass.setText("");
             new_pass.setText("");
             confirm_pass.setText("");
+            
+            Login log1 = new Login();
+            log1.setVisible(true);
+            this.setVisible(false);   
         }       
     }//GEN-LAST:event_change_btnActionPerformed
 

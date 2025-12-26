@@ -5,6 +5,7 @@
 package view;
 
 import controller.FetchTransactionController;
+import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
 import javax.swing.JTable;
@@ -24,6 +25,10 @@ public class TransactionHistory extends javax.swing.JFrame {
      */
     public TransactionHistory() {
         initComponents();
+        history_btn.setBackground(new Color(0, 125, 234)); 
+        history_btn.setForeground(Color.WHITE);            
+        history_btn.setOpaque(true);                    
+        history_btn.setBorderPainted(false); 
         // Disable auto resize
         jTable2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -85,16 +90,12 @@ public class TransactionHistory extends javax.swing.JFrame {
         horizon_text = new javax.swing.JLabel();
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
-        emp_dashboard_btn = new javax.swing.JButton();
-        notic_btn = new javax.swing.JButton();
         history_btn = new javax.swing.JButton();
-        fund_transfer_btn = new javax.swing.JButton();
-        deposit_btn = new javax.swing.JButton();
-        customer_add_btn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         transaction_txt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,24 +167,6 @@ public class TransactionHistory extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        emp_dashboard_btn.setBackground(new java.awt.Color(217, 217, 217));
-        emp_dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        emp_dashboard_btn.setText("DASHBOARD");
-        emp_dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_dashboard_btnActionPerformed(evt);
-            }
-        });
-
-        notic_btn.setBackground(new java.awt.Color(217, 217, 217));
-        notic_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        notic_btn.setText("NOTICES");
-        notic_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                notic_btnActionPerformed(evt);
-            }
-        });
-
         history_btn.setBackground(new java.awt.Color(217, 217, 217));
         history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         history_btn.setText("TRANSACTION HISTORY");
@@ -193,64 +176,21 @@ public class TransactionHistory extends javax.swing.JFrame {
             }
         });
 
-        fund_transfer_btn.setBackground(new java.awt.Color(217, 217, 217));
-        fund_transfer_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        fund_transfer_btn.setText("FUND TRANSFER");
-        fund_transfer_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fund_transfer_btnActionPerformed(evt);
-            }
-        });
-
-        deposit_btn.setBackground(new java.awt.Color(217, 217, 217));
-        deposit_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        deposit_btn.setText("DEPOSIT MONEY");
-        deposit_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deposit_btnActionPerformed(evt);
-            }
-        });
-
-        customer_add_btn.setBackground(new java.awt.Color(217, 217, 217));
-        customer_add_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        customer_add_btn.setText("CREATE CUST ACCOUNT");
-        customer_add_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customer_add_btnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skyblue_panelLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(customer_add_btn)
-                    .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+            .addGroup(skyblue_panelLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(164, 164, 164)
                 .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(customer_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1085, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -283,18 +223,33 @@ public class TransactionHistory extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable2);
 
+        jButton1.setBackground(new java.awt.Color(179, 28, 221));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(348, 348, 348)
-                .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(348, 348, 348)
+                        .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(432, 432, 432)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,7 +258,9 @@ public class TransactionHistory extends javax.swing.JFrame {
                 .addComponent(transaction_txt)
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -328,29 +285,17 @@ public class TransactionHistory extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emp_dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_dashboard_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emp_dashboard_btnActionPerformed
-
-    private void notic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notic_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notic_btnActionPerformed
-
     private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_history_btnActionPerformed
 
-    private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fund_transfer_btnActionPerformed
+        AdminUi ad = new AdminUi();
+        ad.setVisible(true);
+        this.setVisible(false);       
 
-    private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deposit_btnActionPerformed
-
-    private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customer_add_btnActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,18 +325,14 @@ public class TransactionHistory extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
-    private javax.swing.JButton customer_add_btn;
-    private javax.swing.JButton deposit_btn;
-    private javax.swing.JButton emp_dashboard_btn;
-    private javax.swing.JButton fund_transfer_btn;
     private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
-    private javax.swing.JButton notic_btn;
     private javax.swing.JPanel pic_outside_panel;
     private javax.swing.JPanel skyblue_panel;
     private javax.swing.JLabel transaction_txt;

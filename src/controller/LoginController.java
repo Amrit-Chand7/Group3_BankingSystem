@@ -4,9 +4,6 @@
  */
 package controller;
 import dao.UserDao;
-import model.User;
-import view.AdminUi;
-import view.Login;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,42 +12,41 @@ import javax.swing.JOptionPane;
  */
 
 public class LoginController {
+    
+    UserDao userDao = new UserDao();
 
-    private UserDao userDao;
-    private Login loginView;
-
-    public LoginController(Login loginView) {
-        this.loginView = loginView;
-        this.userDao = new UserDao();
-    }
-
-    public void login(String email, String password) {
+    public String login(String email, String password) {
         if((email == null || email.trim().isEmpty()) && (password == null || password.trim().isEmpty())) {
-            JOptionPane.showMessageDialog(loginView, "Please enter your email and password.");
-            return;
+            JOptionPane.showMessageDialog(null, "Please enter your email and password.");
+            return null;
         }
         // Step 1: Check for empty fields
         if(email == null || email.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(loginView, "Please enter your email.");
-            return; // stop further execution
+            JOptionPane.showMessageDialog(null, "Please enter your email.");
+            return null; // stop further execution
         }
         if(password == null || password.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(loginView, "Please enter your password.");
-            return; // stop further execution
+            JOptionPane.showMessageDialog(null, "Please enter your password.");
+            return null; // stop further execution
         }
-        User user = userDao.getUserByEmailAndPassword(email, password);
-        if(user != null) {
-            if(user.getRole().trim().equalsIgnoreCase("admin")) {
-                // Open Admin window
-                AdminUi adminUi = new AdminUi();
-                adminUi.setVisible(true);
-               
-            } else {
-                JOptionPane.showMessageDialog(loginView, "Only admin login implemented now.");
+        
+        String role = userDao.getUserByEmailAndPassword(email, password);
+        if ("admin".equals(role)) {
+            
+            return "admin";
+            
+        }
+        else{
+            role = userDao.checkEmployee1(email, password);
+            if ("employee".equals(role)) {
+                return "employee";
             }
-        } else {
-            JOptionPane.showMessageDialog(loginView, "Invalid email or password!");
+            else {
+                JOptionPane.showMessageDialog(null, "Invalid email or password!");
+            }
         }
+           
+    return null;
     }
 }
 

@@ -16,12 +16,10 @@ public class Login extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
 
-    private final LoginController loginController;
     public Login() {
         initComponents();
         pass_input.setEchoChar('*');
-        // Initialize the controller and pass this view to it
-        loginController = new LoginController(this);
+       
         
     }
     
@@ -321,8 +319,26 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:)
         String email = email_input.getText();
         String password = new String(pass_input.getPassword());
+        
+        LoginController loginController = new LoginController();
         // Send data to controller
-        loginController.login(email, password);
+        String role7 = loginController.login(email, password);
+        
+        if (role7 == null){
+            return;
+        }
+        else if("admin".equals(role7)){
+            AdminUi emWindow1 = new AdminUi();
+            // close current login window
+            this.dispose();
+            emWindow1.setVisible(true);  
+        }
+        else if("employee".equals(role7)){
+            EmployeeDashboard emWindow1 = new EmployeeDashboard();
+            this.dispose();
+            emWindow1.setVisible(true);             
+        }
+        
         
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 

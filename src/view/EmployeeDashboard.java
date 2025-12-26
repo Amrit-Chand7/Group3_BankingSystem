@@ -120,7 +120,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        emp_dashboard_btn.setBackground(new java.awt.Color(217, 217, 217));
+        emp_dashboard_btn.setBackground(new java.awt.Color(0, 125, 234));
         emp_dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         emp_dashboard_btn.setText("DASHBOARD");
         emp_dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -326,10 +326,17 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
+    
+        Login log3 = new Login();
+        log3.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_logout_btnActionPerformed
 
     private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
         // TODO add your handling code here:
+        UpdateProfileUi upWindow = new UpdateProfileUi();
+        upWindow.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_profile_btnActionPerformed
 
     private void customer_search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_search_txtActionPerformed
@@ -374,6 +381,9 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
         // TODO add your handling code here:
+        DepositMoney dep = new DepositMoney();
+        dep.setVisible(true);
+        this.setVisible(false);   
     }//GEN-LAST:event_deposit_btnActionPerformed
 
     private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed

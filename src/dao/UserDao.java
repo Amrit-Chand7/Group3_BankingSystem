@@ -7,7 +7,8 @@ import Database.MySqlConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import model.User;
+
+
 
 /**
  * UserDao handles login for the default admin only.
@@ -16,7 +17,7 @@ public class UserDao {
     
     // Default admin details
     private final String DEFAULT_ADMIN_NAME = "Amrit Chand Thakuri";
-    private final int DEFAULT_ADMIN_ID = 1;
+
     private final String DEFAULT_ADMIN_EMAIL = "amrit@gmail.com";
 
     // Hashed default admin password
@@ -53,23 +54,39 @@ public class UserDao {
     }
        
 
-    public User getUserByEmailAndPassword(String email, String pass) {
-        
+    public String getUserByEmailAndPassword(String email, String pass){
         // Hash the entered password
         String hashedPass = PasswordUtils.hashPassword(pass);
 
         // Check default admin credentials
         if (email.equals(DEFAULT_ADMIN_EMAIL) && hashedPass.equals(password)) {
-            User user = new User();
-            user.setId(DEFAULT_ADMIN_ID);
-            user.setFullName(DEFAULT_ADMIN_NAME);
-            user.setEmail(DEFAULT_ADMIN_EMAIL);
-            user.setRole("admin");
 
-            return user;
+            return "admin";
         }
-
-        // Return null if credentials are incorrect
         return null;
+    }
+        
+    public String checkEmployee1(String email, String password) {
+        
+        // CHECK EMPLOYEE 
+        String hash1 = PasswordUtils.hashPassword(password);
+
+        try (Connection conn = db.openconnection()) {
+            String sql = "SELECT em_email, em_password, em_role FROM employee WHERE em_email=? AND em_password=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, hash1);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                return "employee";
+
+            }
+        } catch (Exception e) {
+            System.err.println("Employee login error: " + e.getMessage());
+        }
+        
+    // Return null if credentials are incorrect
+    return null;
     }
 }

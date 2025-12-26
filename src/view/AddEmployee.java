@@ -43,9 +43,6 @@ public class AddEmployee extends javax.swing.JFrame {
         horizon_text = new javax.swing.JLabel();
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
-        dashboard_btn = new javax.swing.JButton();
-        create_notice_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
         add_employee_btn1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -62,6 +59,7 @@ public class AddEmployee extends javax.swing.JFrame {
         emp_number_txt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         emp_address_txt = new javax.swing.JTextField();
+        back_btn = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,30 +131,6 @@ public class AddEmployee extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        dashboard_btn.setText("DASHBOARD");
-        dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dashboard_btnActionPerformed(evt);
-            }
-        });
-
-        create_notice_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        create_notice_btn.setText("CREATE NOTICE");
-        create_notice_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                create_notice_btnActionPerformed(evt);
-            }
-        });
-
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
         add_employee_btn1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         add_employee_btn1.setText("CREATE EMP ACCOUNT");
         add_employee_btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -170,26 +144,16 @@ public class AddEmployee extends javax.swing.JFrame {
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(history_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dashboard_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(add_employee_btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(create_notice_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(165, 165, 165)
                 .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1173, Short.MAX_VALUE))
+                .addContainerGap(1587, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -278,6 +242,16 @@ public class AddEmployee extends javax.swing.JFrame {
             }
         });
 
+        back_btn.setBackground(new java.awt.Color(179, 28, 221));
+        back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        back_btn.setText("BACK");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -311,8 +285,10 @@ public class AddEmployee extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(169, 169, 169))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(emp_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(132, 132, 132))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(emp_add_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addComponent(back_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(129, 129, 129))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,17 +315,19 @@ public class AddEmployee extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emp_address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emp_role_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(roleLabel))
-                .addGap(36, 36, 36)
-                .addComponent(emp_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(emp_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
         pic_outside_panel.add(jPanel1);
-        jPanel1.setBounds(580, 90, 570, 650);
+        jPanel1.setBounds(580, 60, 570, 700);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -369,18 +347,6 @@ public class AddEmployee extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
-    private void create_notice_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_notice_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_create_notice_btnActionPerformed
-
-    private void dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboard_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dashboard_btnActionPerformed
 
     private void emp_name_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_name_txtActionPerformed
         // TODO add your handling code here:
@@ -439,6 +405,14 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emp_address_txtActionPerformed
 
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        AdminUi ad = new AdminUi();
+        ad.setVisible(true);
+        this.setVisible(false);       
+
+    }//GEN-LAST:event_back_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -466,10 +440,9 @@ public class AddEmployee extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_employee_btn1;
+    private javax.swing.JToggleButton back_btn;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
-    private javax.swing.JButton create_notice_btn;
-    private javax.swing.JButton dashboard_btn;
     private javax.swing.JButton emp_add_btn;
     private javax.swing.JTextField emp_address_txt;
     private javax.swing.JTextField emp_email_txt;
@@ -477,7 +450,6 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JTextField emp_number_txt;
     private javax.swing.JTextField emp_pass_txt;
     private javax.swing.JTextField emp_role_txt;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -4,6 +4,7 @@
  */
 package view;
 import controller.NoticeController;
+import java.awt.Color;
 /**
  *
  * @author amritchand
@@ -17,6 +18,10 @@ public class NoticUi extends javax.swing.JFrame {
      */
     public NoticUi() {
         initComponents();
+        create_notice_btn.setBackground(new Color(0, 125, 234)); 
+        create_notice_btn.setForeground(Color.WHITE);            
+        create_notice_btn.setOpaque(true);                    
+        create_notice_btn.setBorderPainted(false);         
     }
 
     /**
@@ -35,15 +40,13 @@ public class NoticUi extends javax.swing.JFrame {
         horizon_text = new javax.swing.JLabel();
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
-        dashboard_btn = new javax.swing.JButton();
         create_notice_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
-        add_employee_btn1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         notice_post_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         notice_txt = new javax.swing.JTextArea();
+        notice_post_btn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,14 +118,6 @@ public class NoticUi extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        dashboard_btn.setText("DASHBOARD");
-        dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dashboard_btnActionPerformed(evt);
-            }
-        });
-
         create_notice_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         create_notice_btn.setText("CREATE NOTICE");
         create_notice_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -131,49 +126,21 @@ public class NoticUi extends javax.swing.JFrame {
             }
         });
 
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
-        add_employee_btn1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        add_employee_btn1.setText("CREATE EMP ACCOUNT");
-        add_employee_btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_employee_btn1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(history_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dashboard_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(create_notice_btn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(add_employee_btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skyblue_panelLayout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(165, 165, 165)
                 .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1173, Short.MAX_VALUE))
+                .addContainerGap(1587, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -200,33 +167,48 @@ public class NoticUi extends javax.swing.JFrame {
         notice_txt.setRows(5);
         jScrollPane1.setViewportView(notice_txt);
 
+        notice_post_btn1.setBackground(new java.awt.Color(179, 28, 221));
+        notice_post_btn1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        notice_post_btn1.setForeground(new java.awt.Color(255, 255, 255));
+        notice_post_btn1.setText("Back");
+        notice_post_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notice_post_btn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 139, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(notice_post_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(notice_post_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(287, 287, 287))
+                .addGap(214, 214, 214))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(notice_post_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(notice_post_btn)
+                    .addComponent(notice_post_btn1))
+                .addGap(54, 54, 54))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -251,17 +233,9 @@ public class NoticUi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
     private void create_notice_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_notice_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_create_notice_btnActionPerformed
-
-    private void dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboard_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dashboard_btnActionPerformed
 
     private void notice_post_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notice_post_btnActionPerformed
         // TODO add your handling code here:
@@ -272,9 +246,13 @@ public class NoticUi extends javax.swing.JFrame {
 
     }//GEN-LAST:event_notice_post_btnActionPerformed
 
-    private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed
+    private void notice_post_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notice_post_btn1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_employee_btn1ActionPerformed
+        AdminUi ad = new AdminUi();
+        ad.setVisible(true);
+        this.setVisible(false);       
+
+    }//GEN-LAST:event_notice_post_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,12 +280,9 @@ public class NoticUi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton add_employee_btn1;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton create_notice_btn;
-    private javax.swing.JButton dashboard_btn;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -315,6 +290,7 @@ public class NoticUi extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
     private javax.swing.JButton notice_post_btn;
+    private javax.swing.JButton notice_post_btn1;
     private javax.swing.JTextArea notice_txt;
     private javax.swing.JPanel pic_outside_panel;
     private javax.swing.JPanel skyblue_panel;

@@ -116,6 +116,7 @@ public class AdminUi extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
+        dashboard_btn.setBackground(new java.awt.Color(0, 125, 234));
         dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         dashboard_btn.setText("DASHBOARD");
         dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -286,18 +287,32 @@ public class AdminUi extends javax.swing.JFrame {
 
     private void create_notice_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_notice_btnActionPerformed
         // TODO add your handling code here:
+        NoticUi noticEmpWindow = new NoticUi();
+        noticEmpWindow.setVisible(true);
+        this.setVisible(false);       
+
     }//GEN-LAST:event_create_notice_btnActionPerformed
 
     private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
         // TODO add your handling code here:
+        TransactionHistory historyWindow = new TransactionHistory();
+        historyWindow.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_history_btnActionPerformed
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
+        Login logWindow = new Login();
+        logWindow.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_logout_btnActionPerformed
 
     private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
         // TODO add your handling code here:
+        PassChangeUi passWin = new PassChangeUi();
+        passWin.setVisible(true);
+        this.setVisible(false);
+        
         
     }//GEN-LAST:event_profile_btnActionPerformed
 
@@ -314,7 +329,7 @@ public class AdminUi extends javax.swing.JFrame {
         // Create the new Add Employee window
         AddEmployee addEmpWindow = new AddEmployee();
         addEmpWindow.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_add_employee_btn1ActionPerformed
 
     /**
