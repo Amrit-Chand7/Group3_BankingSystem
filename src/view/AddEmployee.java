@@ -5,6 +5,7 @@
 package view;
 import controller.AddStaffController;
 import java.awt.Color;
+import javax.swing.JFrame;
 
 
 /**
@@ -20,6 +21,7 @@ public class AddEmployee extends javax.swing.JFrame {
      */
     public AddEmployee() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         // Make the "Add Employee" button blue when this window opens
         add_employee_btn1.setBackground(new Color(0, 125, 234)); 
         add_employee_btn1.setForeground(Color.WHITE);            

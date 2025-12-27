@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author amritchand
  */
 public class EmployeeDashboard extends javax.swing.JFrame {
-    
+    private String email20;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName());
 
     /**
@@ -19,6 +19,11 @@ public class EmployeeDashboard extends javax.swing.JFrame {
      */
     public EmployeeDashboard() {
         initComponents();
+    }
+    public EmployeeDashboard(String emailFromLogin) {
+        initComponents();
+        System.out.print(emailFromLogin);
+        this.email20 = emailFromLogin;
     }
 
     /**
@@ -340,7 +345,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
         // TODO add your handling code here:
-        UpdateProfileUi upWindow = new UpdateProfileUi();
+        UpdateProfileUi upWindow = new UpdateProfileUi(email20);
         upWindow.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_profile_btnActionPerformed

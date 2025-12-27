@@ -3,27 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/ViewNoticeController.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/LoginController.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/UserDao.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/NoticUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/DepositMoney.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/AdminUi.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/Login.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/AddEmployee.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/CustomerAccManage.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/DeleteCustomerUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/CustomerAddUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/SendCode.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/NewPass.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/ManageCustomerController.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/DepositController.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/FetchTransactionController.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/TransactionHistory.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/EmployeeDashboard.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/UpdateProfileUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/PassChangeUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/EmpNoticeUi.java</file>
         </group>
     </open-files>
 </project-private>

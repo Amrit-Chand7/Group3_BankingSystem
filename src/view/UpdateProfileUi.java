@@ -13,6 +13,9 @@ import java.awt.Color;
  */
 public class UpdateProfileUi extends javax.swing.JFrame {
     
+    private String loginEmail;
+
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UpdateProfileUi.class.getName());
 
     /**
@@ -24,6 +27,11 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         emp_dashboard_btn.setForeground(Color.WHITE);            
         emp_dashboard_btn.setOpaque(true);                    
         emp_dashboard_btn.setBorderPainted(false);
+    }
+    public UpdateProfileUi(String email20) {
+        initComponents();
+        this.loginEmail = email20;
+
     }
 
     /**
@@ -337,7 +345,13 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         String empPhone = emp_phone_txt.getText();
         String empAddress = address_txt.getText();
 
-        
+        if (!empEmail.equalsIgnoreCase(loginEmail)) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "You can only update your own profile!",
+                "Access Denied",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         // 2. Create controller instance
         UpdateProfileController updateController = new UpdateProfileController();
 

@@ -5,6 +5,7 @@
 package view;
 
 import controller.LoginController;
+import javax.swing.JFrame;
 
 
 
@@ -18,6 +19,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         pass_input.setEchoChar('*');
        
         
@@ -77,7 +79,7 @@ public class Login extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1470, 932));
+        setMinimumSize(new java.awt.Dimension(1470, 932));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(216, 233, 239));
@@ -197,10 +199,11 @@ public class Login extends javax.swing.JFrame {
                         .addGap(230, 230, 230)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
-                            .addComponent(pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(email_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(check_box)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(check_box))
+                            .addComponent(email_input, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 36, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(340, 340, 340)
@@ -334,7 +337,8 @@ public class Login extends javax.swing.JFrame {
             emWindow1.setVisible(true);  
         }
         else if("employee".equals(role7)){
-            EmployeeDashboard emWindow1 = new EmployeeDashboard();
+            EmployeeDashboard emWindow1 = new EmployeeDashboard(email);
+            
             this.dispose();
             emWindow1.setVisible(true);             
         }
