@@ -182,7 +182,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="customer_add_btn" min="-2" max="-2" attributes="0"/>
                           <Component id="notic_btn" min="-2" pref="178" max="-2" attributes="0"/>
@@ -191,7 +191,7 @@
                           <Component id="deposit_btn" min="-2" pref="178" max="-2" attributes="0"/>
                           <Component id="emp_dashboard_btn" min="-2" pref="178" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

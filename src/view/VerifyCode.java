@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.ResetPassController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,13 +12,19 @@ package view;
  */
 public class VerifyCode extends javax.swing.JFrame {
     
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VerifyCode.class.getName());
+    
+    private String code5;
 
     /**
      * Creates new form VerifyCode
      */
-    public VerifyCode() {
+    public VerifyCode(String code5 ) {
+ 
         initComponents();
+        this.code5 = code5;
+
     }
 
     /**
@@ -221,12 +229,33 @@ public class VerifyCode extends javax.swing.JFrame {
 
     private void verify_code_btn1jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verify_code_btn1jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        String inputCode = verify_code_input.getText().trim();
+
+        
+        ResetPassController check9 = new ResetPassController();
+        
+        if (inputCode.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter the code.");
+        }
+        
+        else if(inputCode.equals(code5)) {
+            JOptionPane.showMessageDialog(this, "Code verified! You can reset your password now.");
+            
+            NewPass passWin = new NewPass();
+            passWin.setVisible(true);
+            this.setVisible(false);
+        } 
+        else {
+            JOptionPane.showMessageDialog(this, "Invalid verification code!");
+        } 
+
     }//GEN-LAST:event_verify_code_btn1jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -243,9 +272,9 @@ public class VerifyCode extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new VerifyCode().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new VerifyCode("123456").setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

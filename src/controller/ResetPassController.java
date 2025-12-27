@@ -86,17 +86,6 @@ public class ResetPassController {
         }
     }
     
-    // Verify user input code
-    public boolean verifyCode(String inputCode) {
-        if (inputCode.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please enter the code.");
-            return false;
-        }
-        else if(inputCode.equals(verificationCode)){
-            return true;
-        }
-        return false;
-    }
     
 }
 
