@@ -46,6 +46,7 @@ public class NewPass extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1470, 930));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(222, 243, 247));
