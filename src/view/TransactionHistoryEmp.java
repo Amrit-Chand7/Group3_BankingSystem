@@ -16,14 +16,14 @@ import model.TransactionModel;
  *
  * @author jenis
  */
-public class TransactionHistory extends javax.swing.JFrame {
+public class TransactionHistoryEmp extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TransactionHistory.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TransactionHistoryEmp.class.getName());
 
     /**
      * Creates new form AdminUi
      */
-    public TransactionHistory() {
+    public TransactionHistoryEmp() {
         initComponents();
         history_btn.setBackground(new Color(0, 125, 234)); 
         history_btn.setForeground(Color.WHITE);            
@@ -248,7 +248,7 @@ public class TransactionHistory extends javax.swing.JFrame {
                         .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(432, 432, 432)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -259,8 +259,8 @@ public class TransactionHistory extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -291,8 +291,8 @@ public class TransactionHistory extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AdminUi ad = new AdminUi();
-        ad.setVisible(true);
+        EmployeeDashboard empWindow5 = new EmployeeDashboard();
+        empWindow5.setVisible(true);
         this.setVisible(false);       
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -319,7 +319,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TransactionHistory().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TransactionHistoryEmp().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -138,9 +138,9 @@ public class NoticUi extends javax.swing.JFrame {
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(165, 165, 165)
+                .addGap(164, 164, 164)
                 .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1587, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);

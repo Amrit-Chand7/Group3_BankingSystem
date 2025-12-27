@@ -196,13 +196,13 @@ public class EmployeeDashboard extends javax.swing.JFrame {
                 .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(47, 47, 47)
                 .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(47, 47, 47)
                 .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(47, 47, 47)
                 .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(47, 47, 47)
                 .addComponent(customer_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(1085, Short.MAX_VALUE))
         );
@@ -318,10 +318,16 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void notic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notic_btnActionPerformed
         // TODO add your handling code here:
+        EmpNoticeUi emNotice = new EmpNoticeUi();
+        emNotice.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_notic_btnActionPerformed
 
     private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
         // TODO add your handling code here:
+        TransactionHistoryEmp transactionWin1 = new TransactionHistoryEmp();
+        transactionWin1.setVisible(true);
+        this.setVisible(false);        
     }//GEN-LAST:event_history_btnActionPerformed
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
@@ -377,6 +383,9 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
         // TODO add your handling code here:
+        FundTransfer transferW = new FundTransfer();
+        transferW.setVisible(true);
+        this.setVisible(false);          
     }//GEN-LAST:event_fund_transfer_btnActionPerformed
 
     private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
@@ -388,6 +397,9 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
         // TODO add your handling code here:
+        CustomerAddUi custWindow = new CustomerAddUi();
+        custWindow.setVisible(true);
+        this.setVisible(false);           
     }//GEN-LAST:event_customer_add_btnActionPerformed
 
     /**

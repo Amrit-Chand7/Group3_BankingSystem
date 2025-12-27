@@ -5,6 +5,7 @@
 package view;
 
 import controller.UpdateProfileController;
+import java.awt.Color;
 
 /**
  *
@@ -19,6 +20,10 @@ public class UpdateProfileUi extends javax.swing.JFrame {
      */
     public UpdateProfileUi() {
         initComponents();
+        emp_dashboard_btn.setBackground(new Color(0, 125, 234)); 
+        emp_dashboard_btn.setForeground(Color.WHITE);            
+        emp_dashboard_btn.setOpaque(true);                    
+        emp_dashboard_btn.setBorderPainted(false);
     }
 
     /**
@@ -38,11 +43,6 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
         emp_dashboard_btn = new javax.swing.JButton();
-        notic_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
-        fund_transfer_btn = new javax.swing.JButton();
-        deposit_btn = new javax.swing.JButton();
-        customer_add_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         emp_email_label = new javax.swing.JLabel();
@@ -54,6 +54,7 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         update_btn1 = new javax.swing.JButton();
         emp_name1_txt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,7 +126,7 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        emp_dashboard_btn.setBackground(new java.awt.Color(217, 217, 217));
+        emp_dashboard_btn.setBackground(new java.awt.Color(0, 125, 234));
         emp_dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         emp_dashboard_btn.setText("DASHBOARD");
         emp_dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -134,82 +135,21 @@ public class UpdateProfileUi extends javax.swing.JFrame {
             }
         });
 
-        notic_btn.setBackground(new java.awt.Color(217, 217, 217));
-        notic_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        notic_btn.setText("NOTICES");
-        notic_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                notic_btnActionPerformed(evt);
-            }
-        });
-
-        history_btn.setBackground(new java.awt.Color(217, 217, 217));
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
-        fund_transfer_btn.setBackground(new java.awt.Color(217, 217, 217));
-        fund_transfer_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        fund_transfer_btn.setText("FUND TRANSFER");
-        fund_transfer_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fund_transfer_btnActionPerformed(evt);
-            }
-        });
-
-        deposit_btn.setBackground(new java.awt.Color(217, 217, 217));
-        deposit_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        deposit_btn.setText("DEPOSIT MONEY");
-        deposit_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deposit_btnActionPerformed(evt);
-            }
-        });
-
-        customer_add_btn.setBackground(new java.awt.Color(217, 217, 217));
-        customer_add_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        customer_add_btn.setText("CREATE CUST ACCOUNT");
-        customer_add_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customer_add_btnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skyblue_panelLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(customer_add_btn)
-                    .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+            .addGroup(skyblue_panelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
+                .addGap(164, 164, 164)
                 .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(customer_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1085, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -254,7 +194,7 @@ public class UpdateProfileUi extends javax.swing.JFrame {
             }
         });
 
-        update_btn1.setBackground(new java.awt.Color(179, 28, 221));
+        update_btn1.setBackground(new java.awt.Color(25, 135, 84));
         update_btn1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         update_btn1.setForeground(new java.awt.Color(255, 255, 255));
         update_btn1.setText("Update");
@@ -275,14 +215,20 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText("Full Name");
 
+        back_btn.setBackground(new java.awt.Color(179, 28, 221));
+        back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        back_btn.setText("Back");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -303,14 +249,22 @@ public class UpdateProfileUi extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(226, 226, 226))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(emp_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(82, 82, 82))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(emp_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(152, 152, 152))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +288,9 @@ public class UpdateProfileUi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(emp_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -363,26 +319,6 @@ public class UpdateProfileUi extends javax.swing.JFrame {
     private void emp_dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_dashboard_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emp_dashboard_btnActionPerformed
-
-    private void notic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notic_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notic_btnActionPerformed
-
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
-    private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fund_transfer_btnActionPerformed
-
-    private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deposit_btnActionPerformed
-
-    private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customer_add_btnActionPerformed
 
     private void emp_phone_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_phone_txtActionPerformed
         // TODO add your handling code here:
@@ -425,6 +361,13 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emp_name1_txtActionPerformed
 
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        EmployeeDashboard upWindow = new EmployeeDashboard();
+        upWindow.setVisible(true);
+        this.setVisible(false);   
+    }//GEN-LAST:event_back_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -452,17 +395,14 @@ public class UpdateProfileUi extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField address_txt;
+    private javax.swing.JButton back_btn;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
-    private javax.swing.JButton customer_add_btn;
-    private javax.swing.JButton deposit_btn;
     private javax.swing.JButton emp_dashboard_btn;
     private javax.swing.JLabel emp_email_label;
     private javax.swing.JTextField emp_email_txt;
     private javax.swing.JTextField emp_name1_txt;
     private javax.swing.JTextField emp_phone_txt;
-    private javax.swing.JButton fund_transfer_btn;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
@@ -471,7 +411,6 @@ public class UpdateProfileUi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
-    private javax.swing.JButton notic_btn;
     private javax.swing.JPanel pic_outside_panel;
     private javax.swing.JPanel skyblue_panel;
     private javax.swing.JButton update_btn1;

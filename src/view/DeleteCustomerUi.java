@@ -69,11 +69,6 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
         emp_dashboard_btn = new javax.swing.JButton();
-        notic_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
-        fund_transfer_btn = new javax.swing.JButton();
-        deposit_btn = new javax.swing.JButton();
-        customer_add_btn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -96,6 +91,7 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         customer_balance1 = new javax.swing.JTextField();
         customer_acc_number1 = new javax.swing.JTextField();
         customer_delete_btn = new javax.swing.JButton();
+        back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -167,7 +163,7 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        emp_dashboard_btn.setBackground(new java.awt.Color(217, 217, 217));
+        emp_dashboard_btn.setBackground(new java.awt.Color(0, 125, 234));
         emp_dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         emp_dashboard_btn.setText("DASHBOARD");
         emp_dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -176,82 +172,21 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
             }
         });
 
-        notic_btn.setBackground(new java.awt.Color(217, 217, 217));
-        notic_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        notic_btn.setText("NOTICES");
-        notic_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                notic_btnActionPerformed(evt);
-            }
-        });
-
-        history_btn.setBackground(new java.awt.Color(217, 217, 217));
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
-        fund_transfer_btn.setBackground(new java.awt.Color(217, 217, 217));
-        fund_transfer_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        fund_transfer_btn.setText("FUND TRANSFER");
-        fund_transfer_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fund_transfer_btnActionPerformed(evt);
-            }
-        });
-
-        deposit_btn.setBackground(new java.awt.Color(217, 217, 217));
-        deposit_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        deposit_btn.setText("DEPOSIT MONEY");
-        deposit_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deposit_btnActionPerformed(evt);
-            }
-        });
-
-        customer_add_btn.setBackground(new java.awt.Color(217, 217, 217));
-        customer_add_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        customer_add_btn.setText("CREATE CUST ACCOUNT");
-        customer_add_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customer_add_btnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skyblue_panelLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(customer_add_btn)
-                    .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+            .addGroup(skyblue_panelLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
+                .addGap(164, 164, 164)
                 .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(customer_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1085, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -316,7 +251,7 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
             }
         });
 
-        customer_delete_btn.setBackground(new java.awt.Color(0, 125, 234));
+        customer_delete_btn.setBackground(new java.awt.Color(220, 53, 69));
         customer_delete_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         customer_delete_btn.setForeground(new java.awt.Color(255, 255, 255));
         customer_delete_btn.setText("Delete Account");
@@ -331,56 +266,57 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(customer_phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customer_dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(customer_address1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(customer_email1_text, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(customer_full_name1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(label6, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                    .addComponent(label5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(customer_acc_type1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customer_acc_number1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(customer_phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(customer_dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(customer_address1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(customer_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(customer_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(15, 15, 15))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(311, 311, 311)
-                .addComponent(customer_delete_btn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(customer_email1_text, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customer_full_name1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(label6, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                            .addComponent(label5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(customer_acc_type1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(customer_acc_number1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(customer_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(customer_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(customer_delete_btn)
+                        .addGap(311, 311, 311))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,10 +353,20 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
                         .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(customer_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(customer_delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
+
+        back_btn.setBackground(new java.awt.Color(179, 28, 221));
+        back_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        back_btn.setText("Back");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -433,7 +379,10 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(404, 404, 404)
+                        .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -443,7 +392,9 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -472,26 +423,6 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emp_dashboard_btnActionPerformed
 
-    private void notic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notic_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notic_btnActionPerformed
-
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
-    private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fund_transfer_btnActionPerformed
-
-    private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deposit_btnActionPerformed
-
-    private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customer_add_btnActionPerformed
-
     private void customer_delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_delete_btnActionPerformed
         // TODO add your handling code here:
         String accNum1 = customer_acc_number1.getText();
@@ -511,6 +442,13 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_customer_acc_number1ActionPerformed
+
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        CustomerAccManage cuDash = new CustomerAccManage();
+        cuDash.setVisible(true);
+        this.setVisible(false);  
+    }//GEN-LAST:event_back_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -538,11 +476,11 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_btn;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JTextField customer_acc_number1;
     private javax.swing.JTextField customer_acc_type1;
-    private javax.swing.JButton customer_add_btn;
     private javax.swing.JTextField customer_address1;
     private javax.swing.JTextField customer_balance1;
     private javax.swing.JButton customer_delete_btn;
@@ -551,10 +489,7 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
     private javax.swing.JTextField customer_full_name1;
     private javax.swing.JTextField customer_id1;
     private javax.swing.JTextField customer_phone1;
-    private javax.swing.JButton deposit_btn;
     private javax.swing.JButton emp_dashboard_btn;
-    private javax.swing.JButton fund_transfer_btn;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -570,7 +505,6 @@ public class DeleteCustomerUi extends javax.swing.JFrame {
     private javax.swing.JLabel label9;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logo_panel;
-    private javax.swing.JButton notic_btn;
     private javax.swing.JPanel pic_outside_panel;
     private javax.swing.JPanel skyblue_panel;
     // End of variables declaration//GEN-END:variables

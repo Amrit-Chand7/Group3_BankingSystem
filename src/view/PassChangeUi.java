@@ -4,6 +4,7 @@
  */
 package view;
 import controller.PassChangeController;
+import java.awt.Color;
 
 /**
  *
@@ -18,6 +19,10 @@ public class PassChangeUi extends javax.swing.JFrame {
      */
     public PassChangeUi() {
         initComponents();
+        dashboard_btn.setBackground(new Color(0, 125, 234)); 
+        dashboard_btn.setForeground(Color.WHITE);            
+        dashboard_btn.setOpaque(true);                    
+        dashboard_btn.setBorderPainted(false);
     }
 
     /**
@@ -37,9 +42,6 @@ public class PassChangeUi extends javax.swing.JFrame {
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
         dashboard_btn = new javax.swing.JButton();
-        create_notice_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
-        add_employee_btn1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         current_pass = new javax.swing.JTextField();
@@ -51,6 +53,7 @@ public class PassChangeUi extends javax.swing.JFrame {
         new_pass = new javax.swing.JTextField();
         admin_email_label = new javax.swing.JLabel();
         admin_email_text1 = new javax.swing.JTextField();
+        back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,55 +133,21 @@ public class PassChangeUi extends javax.swing.JFrame {
             }
         });
 
-        create_notice_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        create_notice_btn.setText("CREATE NOTICE");
-        create_notice_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                create_notice_btnActionPerformed(evt);
-            }
-        });
-
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
-        add_employee_btn1.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        add_employee_btn1.setText("CREATE EMP ACCOUNT");
-        add_employee_btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_employee_btn1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(history_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dashboard_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(add_employee_btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(create_notice_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
+                .addGap(164, 164, 164)
                 .addComponent(dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(add_employee_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(create_notice_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1173, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -245,6 +214,16 @@ public class PassChangeUi extends javax.swing.JFrame {
             }
         });
 
+        back_btn.setBackground(new java.awt.Color(179, 28, 221));
+        back_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        back_btn.setText("Back");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -256,36 +235,38 @@ public class PassChangeUi extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(admin_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
                                 .addGap(24, 24, 24))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(new_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(confirm_pass)
-                    .addComponent(current_pass)
-                    .addComponent(admin_email_text1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(new_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(confirm_pass)
+                            .addComponent(current_pass)
+                            .addComponent(admin_email_text1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(change_btn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(187, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(160, 160, 160))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(change_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120))))
+                .addComponent(jLabel1)
+                .addGap(160, 160, 160))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(admin_email_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(admin_email_label))
@@ -302,8 +283,10 @@ public class PassChangeUi extends javax.swing.JFrame {
                     .addComponent(confirm_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(31, 31, 31)
-                .addComponent(change_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(change_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -327,14 +310,6 @@ public class PassChangeUi extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
-    private void create_notice_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_notice_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_create_notice_btnActionPerformed
 
     private void dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboard_btnActionPerformed
         // TODO add your handling code here:
@@ -381,13 +356,16 @@ public class PassChangeUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_new_passActionPerformed
 
-    private void add_employee_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employee_btn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_employee_btn1ActionPerformed
-
     private void admin_email_text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_email_text1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_admin_email_text1ActionPerformed
+
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        // TODO add your handling code here:
+        AdminUi pa = new AdminUi();
+        pa.setVisible(true);
+        this.setVisible(false);  
+    }//GEN-LAST:event_back_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -415,17 +393,15 @@ public class PassChangeUi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton add_employee_btn1;
     private javax.swing.JLabel admin_email_label;
     private javax.swing.JTextField admin_email_text1;
+    private javax.swing.JButton back_btn;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton change_btn;
     private javax.swing.JTextField confirm_pass;
-    private javax.swing.JButton create_notice_btn;
     private javax.swing.JTextField current_pass;
     private javax.swing.JButton dashboard_btn;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

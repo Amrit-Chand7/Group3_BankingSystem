@@ -5,6 +5,7 @@
 package view;
 
 import controller.ViewNoticeController;
+import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +22,10 @@ public class EmpNoticeUi extends javax.swing.JFrame {
 
     public EmpNoticeUi() {
         initComponents();
+        notic_btn.setBackground(new Color(0, 125, 234)); 
+        notic_btn.setForeground(Color.WHITE);            
+        notic_btn.setOpaque(true);                    
+        notic_btn.setBorderPainted(false);
 
         // Lock header behavior
         jTable4.getTableHeader().setReorderingAllowed(false);
@@ -82,16 +87,12 @@ public class EmpNoticeUi extends javax.swing.JFrame {
         horizon_text = new javax.swing.JLabel();
         pic_outside_panel = new javax.swing.JPanel();
         skyblue_panel = new javax.swing.JPanel();
-        emp_dashboard_btn = new javax.swing.JButton();
         notic_btn = new javax.swing.JButton();
-        history_btn = new javax.swing.JButton();
-        fund_transfer_btn = new javax.swing.JButton();
-        deposit_btn = new javax.swing.JButton();
-        customer_add_btn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         transaction_txt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -163,15 +164,6 @@ public class EmpNoticeUi extends javax.swing.JFrame {
         skyblue_panel.setBackground(new java.awt.Color(20, 120, 157));
         skyblue_panel.setPreferredSize(new java.awt.Dimension(291, 930));
 
-        emp_dashboard_btn.setBackground(new java.awt.Color(217, 217, 217));
-        emp_dashboard_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        emp_dashboard_btn.setText("DASHBOARD");
-        emp_dashboard_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_dashboard_btnActionPerformed(evt);
-            }
-        });
-
         notic_btn.setBackground(new java.awt.Color(217, 217, 217));
         notic_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
         notic_btn.setText("NOTICES");
@@ -181,73 +173,21 @@ public class EmpNoticeUi extends javax.swing.JFrame {
             }
         });
 
-        history_btn.setBackground(new java.awt.Color(217, 217, 217));
-        history_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        history_btn.setText("TRANSACTION HISTORY");
-        history_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_btnActionPerformed(evt);
-            }
-        });
-
-        fund_transfer_btn.setBackground(new java.awt.Color(217, 217, 217));
-        fund_transfer_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        fund_transfer_btn.setText("FUND TRANSFER");
-        fund_transfer_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fund_transfer_btnActionPerformed(evt);
-            }
-        });
-
-        deposit_btn.setBackground(new java.awt.Color(217, 217, 217));
-        deposit_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        deposit_btn.setText("DEPOSIT MONEY");
-        deposit_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deposit_btnActionPerformed(evt);
-            }
-        });
-
-        customer_add_btn.setBackground(new java.awt.Color(217, 217, 217));
-        customer_add_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
-        customer_add_btn.setText("CREATE CUST ACCOUNT");
-        customer_add_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customer_add_btnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout skyblue_panelLayout = new javax.swing.GroupLayout(skyblue_panel);
         skyblue_panel.setLayout(skyblue_panelLayout);
         skyblue_panelLayout.setHorizontalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skyblue_panelLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addGroup(skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(customer_add_btn)
-                    .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+            .addGroup(skyblue_panelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         skyblue_panelLayout.setVerticalGroup(
             skyblue_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skyblue_panelLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(emp_dashboard_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(deposit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(fund_transfer_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(164, 164, 164)
                 .addComponent(notic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(history_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(customer_add_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1085, Short.MAX_VALUE))
+                .addContainerGap(1588, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(skyblue_panel);
@@ -280,18 +220,33 @@ public class EmpNoticeUi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable4);
 
+        jButton1.setBackground(new java.awt.Color(179, 28, 221));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(306, 306, 306)
                 .addComponent(transaction_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(333, 333, 333))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +255,9 @@ public class EmpNoticeUi extends javax.swing.JFrame {
                 .addComponent(transaction_txt)
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel1);
@@ -325,29 +282,16 @@ public class EmpNoticeUi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emp_dashboard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_dashboard_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emp_dashboard_btnActionPerformed
-
     private void notic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notic_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_notic_btnActionPerformed
 
-    private void history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_btnActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_history_btnActionPerformed
-
-    private void fund_transfer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fund_transfer_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fund_transfer_btnActionPerformed
-
-    private void deposit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposit_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deposit_btnActionPerformed
-
-    private void customer_add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_add_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customer_add_btnActionPerformed
+        EmployeeDashboard empDash = new EmployeeDashboard();
+        empDash.setVisible(true);
+        this.setVisible(false);   
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,12 +321,8 @@ public class EmpNoticeUi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
-    private javax.swing.JButton customer_add_btn;
-    private javax.swing.JButton deposit_btn;
-    private javax.swing.JButton emp_dashboard_btn;
-    private javax.swing.JButton fund_transfer_btn;
-    private javax.swing.JButton history_btn;
     private javax.swing.JLabel horizon_text;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable4;
