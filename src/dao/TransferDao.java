@@ -17,7 +17,7 @@ public class TransferDao {
     public boolean isAccountExists(String accountNumber) {
         String query = "SELECT 1 FROM accounts WHERE account_number = ?";
         try (Connection con = db.getConnection();
-             PreparedStatement ps = con.prepareStatement(query)) {
+            PreparedStatement ps = con.prepareStatement(query)) {
             ps.setString(1, accountNumber);
             ResultSet rs = ps.executeQuery();
             return rs.next();

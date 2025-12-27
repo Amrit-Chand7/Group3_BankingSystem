@@ -16,14 +16,16 @@ public class VerifyCode extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VerifyCode.class.getName());
     
     private String code5;
+    private String emai2;
 
     /**
      * Creates new form VerifyCode
      */
-    public VerifyCode(String code5 ) {
+    public VerifyCode(String code5, String emailRecover ) {
  
         initComponents();
         this.code5 = code5;
+        this.emai2 = emailRecover;
 
     }
 
@@ -239,14 +241,14 @@ public class VerifyCode extends javax.swing.JFrame {
         }
         
         else if(inputCode.equals(code5)) {
-            JOptionPane.showMessageDialog(this, "Code verified! You can reset your password now.");
+            JOptionPane.showMessageDialog(null, "Code verified! You can reset your password now.");
             
-            NewPass passWin = new NewPass();
+            NewPass passWin = new NewPass(emai2);
             passWin.setVisible(true);
             this.setVisible(false);
         } 
         else {
-            JOptionPane.showMessageDialog(this, "Invalid verification code!");
+            JOptionPane.showMessageDialog(null, "Invalid verification code!");
         } 
 
     }//GEN-LAST:event_verify_code_btn1jToggleButton1ActionPerformed
@@ -274,7 +276,7 @@ public class VerifyCode extends javax.swing.JFrame {
         //</editor-fold>
         
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new VerifyCode("123456").setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new VerifyCode("123456", "chandamrit62@gmail.com").setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

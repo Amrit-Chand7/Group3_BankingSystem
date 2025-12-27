@@ -238,7 +238,7 @@ public class SendCode extends javax.swing.JFrame {
             
             
             // Open VerifyCode Window
-            VerifyCode verifyWin = new VerifyCode(code5);
+            VerifyCode verifyWin = new VerifyCode(code5,emailRecover);
             verifyWin.setVisible(true);
             this.setVisible(false);
         }

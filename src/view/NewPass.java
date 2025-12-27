@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.NewPassController;
 
 /**
  *
@@ -10,13 +11,15 @@ package view;
  */
 public class NewPass extends javax.swing.JFrame {
     
+    private String emai20;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewPass.class.getName());
 
     /**
      * Creates new form NewPass
      */
-    public NewPass() {
+    public NewPass(String emai2) {
         initComponents();
+        this.emai20 = emai2;
     }
 
     /**
@@ -237,6 +240,12 @@ public class NewPass extends javax.swing.JFrame {
 
     private void reset_pass_btnjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_pass_btnjToggleButton1ActionPerformed
         // TODO add your handling code here:
+        String newPass1 =new_pass_input.getText().trim();
+        String confirmPass1 =confirm_pass_input.getText().trim();
+        
+        NewPassController controllerPass = new NewPassController();
+        controllerPass.validatePassword(newPass1, confirmPass1, emai20);
+        
     }//GEN-LAST:event_reset_pass_btnjToggleButton1ActionPerformed
 
     private void new_pass_inputjTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_pass_inputjTextField1ActionPerformed
@@ -265,7 +274,7 @@ public class NewPass extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new NewPass().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new NewPass("chandamrit62@gmail.com").setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
