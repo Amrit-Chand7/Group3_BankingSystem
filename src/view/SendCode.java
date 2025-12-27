@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package all;
+package view;
+import controller.ResetPassController;
 
 /**
  *
@@ -45,6 +46,7 @@ public class SendCode extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1470, 930));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(222, 243, 247));
@@ -220,7 +222,22 @@ public class SendCode extends javax.swing.JFrame {
     }//GEN-LAST:event_back_btnjToggleButton1ActionPerformed
 
     private void send_code_btn1jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_code_btn1jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        String emailRecover = recover_email_input.getText().trim();
+        ResetPassController reset1 = new ResetPassController();
+        boolean test1=reset1.checkEmail(emailRecover);
+        if(test1){
+            // Generate verification code
+            reset1.generateCode();
+            // Send verification code via email
+            reset1.sendEmail(emailRecover);
+            
+            // Open VerifyCode Window
+            VerifyCode verifyWin = new VerifyCode();
+            verifyWin.setVisible(true);
+            this.setVisible(false);
+        }
+
     }//GEN-LAST:event_send_code_btn1jToggleButton1ActionPerformed
 
     /**

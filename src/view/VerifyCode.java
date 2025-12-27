@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.ResetPassController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,6 +47,7 @@ public class VerifyCode extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1470, 930));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(222, 243, 247));
@@ -220,6 +223,20 @@ public class VerifyCode extends javax.swing.JFrame {
 
     private void verify_code_btn1jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verify_code_btn1jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        String inputCode = verify_code_input.getText().trim();
+        ResetPassController check12 = new ResetPassController();
+        boolean isCorrect4 = check12.verifyCode(inputCode);
+        if(isCorrect4){
+            JOptionPane.showMessageDialog(null, "Code verified! You can now reset your password.");
+            NewPass newWin = new NewPass();
+            newWin.setVisible(true);
+            this.setVisible(false);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Incorrect code! Please try again.");
+        }
+        
+        
     }//GEN-LAST:event_verify_code_btn1jToggleButton1ActionPerformed
 
     /**

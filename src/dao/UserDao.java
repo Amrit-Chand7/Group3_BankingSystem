@@ -17,7 +17,7 @@ public class UserDao {
     // Default admin details
     private final String DEFAULT_ADMIN_NAME = "Amrit Chand Thakuri";
     private final int DEFAULT_ADMIN_ID = 1;
-    private final String DEFAULT_ADMIN_EMAIL = "amrit@gmail.com";
+    private final String DEFAULT_ADMIN_EMAIL = "chand62@gmail.com";
 
     // Hashed default admin password
     private final String password = PasswordUtils.hashPassword("ammu@221");

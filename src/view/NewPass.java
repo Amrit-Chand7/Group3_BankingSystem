@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package all;
+package view;
 
 /**
  *
@@ -29,7 +29,6 @@ public class NewPass extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         confirm_pass_input = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -39,6 +38,7 @@ public class NewPass extends javax.swing.JFrame {
         new_pass_input = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -46,11 +46,10 @@ public class NewPass extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1470, 930));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(222, 243, 247));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel19.setText("Password");
@@ -107,6 +106,8 @@ public class NewPass extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel15.setText("Confirm Password");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -123,11 +124,14 @@ public class NewPass extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(319, 319, 319))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(back_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(reset_pass_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(300, 300, 300))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(394, 394, 394)
-                        .addComponent(jLabel18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,21 +140,18 @@ public class NewPass extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(confirm_pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(new_pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(new_pass_input, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(256, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(back_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(reset_pass_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(300, 300, 300))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel17)
                 .addGap(62, 62, 62)
                 .addComponent(jLabel20)
@@ -270,10 +271,10 @@ public class NewPass extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton back_btn;
     private javax.swing.JTextField confirm_pass_input;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel5;
