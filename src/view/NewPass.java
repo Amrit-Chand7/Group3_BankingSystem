@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 public class NewPass extends javax.swing.JFrame {
     
     private String emai20;
+    private String emai23;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewPass.class.getName());
 
     /**
@@ -237,6 +238,9 @@ public class NewPass extends javax.swing.JFrame {
 
     private void back_btnjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnjToggleButton1ActionPerformed
         // TODO add your handling code here:
+        VerifyCode sendDash2 = new VerifyCode(emai23, emai20);
+        sendDash2.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_back_btnjToggleButton1ActionPerformed
 
     private void reset_pass_btnjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_pass_btnjToggleButton1ActionPerformed

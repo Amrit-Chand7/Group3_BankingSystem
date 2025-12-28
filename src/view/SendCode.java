@@ -220,6 +220,9 @@ public class SendCode extends javax.swing.JFrame {
 
     private void back_btnjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnjToggleButton1ActionPerformed
         // TODO add your handling code here:
+        Login loDash = new Login();
+        loDash.setVisible(true);
+        this.setVisible(false);  
     }//GEN-LAST:event_back_btnjToggleButton1ActionPerformed
 
     private void send_code_btn1jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_code_btn1jToggleButton1ActionPerformed

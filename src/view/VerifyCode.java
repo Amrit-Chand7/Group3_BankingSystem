@@ -226,6 +226,9 @@ public class VerifyCode extends javax.swing.JFrame {
 
     private void back_btnjToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnjToggleButton1ActionPerformed
         // TODO add your handling code here:
+        SendCode sendDash1 = new SendCode();
+        sendDash1.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_back_btnjToggleButton1ActionPerformed
 
     private void verify_code_btn1jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verify_code_btn1jToggleButton1ActionPerformed
