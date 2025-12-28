@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import controller.ResetPassController;
 import javax.swing.JOptionPane;
 
 /**
@@ -233,8 +232,6 @@ public class VerifyCode extends javax.swing.JFrame {
         // TODO add your handling code here:
         String inputCode = verify_code_input.getText().trim();
 
-        
-        ResetPassController check9 = new ResetPassController();
         
         if (inputCode.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter the code.");

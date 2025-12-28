@@ -29,7 +29,7 @@ public class NewPassController {
         }
         
         NewPasswordDao changePass3 = new NewPasswordDao();
-        boolean changePass4 = changePass3.ChangeOldPass(newPass1, confirmPass1, emai20);
+        boolean changePass4 = changePass3.ChangeOldPass(newPass1, emai20);
 
         return true;
     }

@@ -4,7 +4,6 @@
  */
 package dao;
 import Database.MySqlConnection;
-import static dao.PasswordUtils.hashPassword;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,14 +17,18 @@ public class NewPasswordDao {
     
     private final MySqlConnection db =  new MySqlConnection();
 
-    public boolean ChangeOldPass(String newPass1, String confirmPass1,String emai20) {
+    public boolean ChangeOldPass(String newPass1,String emai20) {
                
         String sql = "UPDATE employee SET em_password = ? WHERE em_email = ?";
 
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
+            
+            String hashed2 = PasswordUtils.hashPassword(newPass1);
+            
+            System.out.print(hashed2);
 
-            ps.setString(1, hashPassword(newPass1));
+            ps.setString(1, hashed2);
             ps.setString(2, emai20);
 
             int rowsAffected = ps.executeUpdate();

@@ -7,7 +7,6 @@
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/AddCustomerController.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/TransactionHistory.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/NoticUi.java</file>
-            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/SendCode.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/VerifyCode.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/Login.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/ViewNoticeController.java</file>
@@ -17,6 +16,27 @@
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/UpdateProfileUi.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/FundTransfer.java</file>
             <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/EmployeeDashboard.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/SendCode.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/NewPass.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/DepositController.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/NewPassController.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/PassChangeController.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/NoticeController.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/NewPasswordDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/ResetPassDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/PasswordUtils.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/TransferDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/ChangePassDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/AddCustomerDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/AdminUi.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/AddEmployee.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/AddStaffDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/demo.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/view/PassChangeUi.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/demo.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/dao/DepositDao.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/controller/AddStaffController.java</file>
+            <file>file:/Users/amritchand/Desktop/Group3_BankingSystem/src/model/AddStaffModel.java</file>
         </group>
     </open-files>
 </project-private>

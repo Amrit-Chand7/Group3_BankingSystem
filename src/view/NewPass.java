@@ -4,6 +4,7 @@
  */
 package view;
 import controller.NewPassController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -244,7 +245,22 @@ public class NewPass extends javax.swing.JFrame {
         String confirmPass1 =confirm_pass_input.getText().trim();
         
         NewPassController controllerPass = new NewPassController();
-        controllerPass.validatePassword(newPass1, confirmPass1, emai20);
+        boolean check6 = controllerPass.validatePassword(newPass1, confirmPass1, emai20);
+        System.out.print(check6);
+        
+        if(check6){
+            new_pass_input.setText("");
+            confirm_pass_input.setText("");
+            
+            
+            Login logWin = new Login();
+            logWin.setVisible(true);
+            this.setVisible(false);
+
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "sorry");
+        }
         
     }//GEN-LAST:event_reset_pass_btnjToggleButton1ActionPerformed
 

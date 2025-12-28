@@ -352,6 +352,9 @@ public class Login extends javax.swing.JFrame {
 
     private void forgot_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgot_btnActionPerformed
         // TODO add your handling code here:
+        SendCode pa1 = new SendCode();
+        pa1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_forgot_btnActionPerformed
 
     /**
