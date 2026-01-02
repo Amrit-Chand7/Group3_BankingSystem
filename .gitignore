@@ -1,7 +1,4 @@
 
-# NetBeans build and config files nbproject/private/
-src/Database/*
-
 build/ 
 dist/
 
