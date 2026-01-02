@@ -15,10 +15,10 @@ public class UpdateProfileController {
 
     private final UpdateProfileDao profileDao = new UpdateProfileDao();
 
-    public boolean updateProfile(String empEmail, String empName, String empPhone, String empAddress) {
+    public boolean updateProfile(String loginEmail, String empName, String empPhone, String empAddress) {
 
         // 1. Empty field validation
-        if (empEmail.trim().isEmpty() || empName.trim().isEmpty()
+        if (empName.trim().isEmpty()
                 || empPhone.trim().isEmpty() || empAddress.trim().isEmpty()) {
 
             JOptionPane.showMessageDialog(null, "Please fill all fields");
@@ -32,7 +32,7 @@ public class UpdateProfileController {
         }
 
         // 3. Check email exists
-        if (!profileDao.verifyEmail(empEmail)) {
+        if (!profileDao.verifyEmail(loginEmail)) {
             JOptionPane.showMessageDialog(null, "Email does not exist");
             return false;
         }
@@ -51,7 +51,7 @@ public class UpdateProfileController {
         }
 
         // 5. Update profile
-        if (profileDao.updateProfile(empEmail, empName, empPhone, empAddress)) {
+        if (profileDao.updateProfile(loginEmail, empName, empPhone, empAddress)) {
             JOptionPane.showMessageDialog(null, "Profile updated successfully");
             return true;
         } else {

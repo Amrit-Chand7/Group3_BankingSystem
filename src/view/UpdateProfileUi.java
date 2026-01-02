@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
 import controller.UpdateProfileController;
 import java.awt.Color;
 
@@ -53,10 +52,8 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         emp_dashboard_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        emp_email_label = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        emp_email_txt = new javax.swing.JTextField();
         emp_phone_txt = new javax.swing.JTextField();
         address_txt = new javax.swing.JTextField();
         update_btn1 = new javax.swing.JButton();
@@ -168,23 +165,11 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setText("  Update Profile");
 
-        emp_email_label.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        emp_email_label.setForeground(new java.awt.Color(51, 51, 255));
-        emp_email_label.setText("Enter your Email ID to update your profile details");
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Phone Number");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("Address");
-
-        emp_email_txt.setBackground(new java.awt.Color(204, 204, 204));
-        emp_email_txt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        emp_email_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emp_email_txtActionPerformed(evt);
-            }
-        });
 
         emp_phone_txt.setBackground(new java.awt.Color(147, 181, 211));
         emp_phone_txt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -261,18 +246,9 @@ public class UpdateProfileUi extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
+                        .addGap(56, 56, 56)
                         .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(emp_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(emp_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,19 +267,15 @@ public class UpdateProfileUi extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(address_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(emp_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(emp_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(68, 68, 68)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         pic_outside_panel.add(jPanel2);
-        jPanel2.setBounds(600, 110, 560, 570);
+        jPanel2.setBounds(600, 110, 560, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -340,36 +312,23 @@ public class UpdateProfileUi extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         // 1. Get input values from text fields
-        String empEmail = emp_email_txt.getText();
         String empName = emp_name1_txt.getText();
         String empPhone = emp_phone_txt.getText();
         String empAddress = address_txt.getText();
 
-        if (!empEmail.equalsIgnoreCase(loginEmail)) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                "You can only update your own profile!",
-                "Access Denied",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-            return;
-        }
         // 2. Create controller instance
         UpdateProfileController updateController = new UpdateProfileController();
 
         // 3. Call controller to add employee
-        boolean change = updateController.updateProfile(empEmail, empName, empPhone, empAddress);
+        boolean change = updateController.updateProfile(loginEmail, empName, empPhone, empAddress);
         
         if(change) {
             //Clear fields
-            emp_email_txt.setText("");
             emp_name1_txt.setText("");
             emp_phone_txt.setText("");
             address_txt.setText("");
         }         
     }//GEN-LAST:event_update_btn1ActionPerformed
-
-    private void emp_email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_email_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emp_email_txtActionPerformed
 
     private void emp_name1_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emp_name1_txtActionPerformed
         // TODO add your handling code here:
@@ -413,8 +372,6 @@ public class UpdateProfileUi extends javax.swing.JFrame {
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;
     private javax.swing.JButton emp_dashboard_btn;
-    private javax.swing.JLabel emp_email_label;
-    private javax.swing.JTextField emp_email_txt;
     private javax.swing.JTextField emp_name1_txt;
     private javax.swing.JTextField emp_phone_txt;
     private javax.swing.JLabel horizon_text;

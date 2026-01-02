@@ -17,7 +17,15 @@ public class DeleteCustomerController {
     
     public boolean confirmAndDelete(String accNum, String accBalance) {
         
-
+        double balance20 = Double.parseDouble(accBalance.trim());
+        if(balance20 > 0){
+            JOptionPane.showMessageDialog(null, 
+                    String.format("This account cannot be deleted because it has a remaining balance greater than zero.%nPlease transfer the funds before attempting to delete the account."),
+                    "Deletion Not Allowed",
+                    JOptionPane.WARNING_MESSAGE
+            );
+            return false;
+        }
         
         int choice2 = JOptionPane.showConfirmDialog(null,
             "Are you sure you want to delete this account?",

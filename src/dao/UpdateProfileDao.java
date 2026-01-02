@@ -18,13 +18,13 @@ public class UpdateProfileDao {
     private final MySqlConnection db = new MySqlConnection();
 
     // Verify email exists
-    public boolean verifyEmail(String empEmail) {
+    public boolean verifyEmail(String loginEmail) {
         String sql = "SELECT 1 FROM employee WHERE em_email = ?";
 
         try (Connection con = db.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, empEmail);
+            ps.setString(1, loginEmail);
             ResultSet rs = ps.executeQuery();
             return rs.next();
 
@@ -35,7 +35,7 @@ public class UpdateProfileDao {
     }
 
     // Update profile details
-    public boolean updateProfile(String empEmail, String empName, String empPhone, String empAddress) {
+    public boolean updateProfile(String loginEmail, String empName, String empPhone, String empAddress) {
 
         String sql = "UPDATE employee SET em_full_name = ?, em_phone_number = ?, em_address = ? WHERE em_email = ?";
 
@@ -45,7 +45,7 @@ public class UpdateProfileDao {
             ps.setString(1, empName);
             ps.setString(2, empPhone);
             ps.setString(3, empAddress);
-            ps.setString(4, empEmail);
+            ps.setString(4, loginEmail);
 
             return ps.executeUpdate() == 1;
 

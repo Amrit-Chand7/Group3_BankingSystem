@@ -14,9 +14,9 @@ public class PassChangeController {
     
     private final ChangePassDao checkInfo= new ChangePassDao();
 
-    public boolean changePassword(String adminEmail,String currentPass, String newPass, String confirmPass){
+    public boolean changePassword(String loginEmail2,String currentPass, String newPass, String confirmPass){
         
-        if (adminEmail.trim().isEmpty() || currentPass.trim().isEmpty() || newPass.trim().isEmpty() || confirmPass.trim().isEmpty()) {
+        if (currentPass.trim().isEmpty() || newPass.trim().isEmpty() || confirmPass.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Enter all the fields");
             return false;
         }
@@ -31,12 +31,7 @@ public class PassChangeController {
             
         }
         
-        if (!checkInfo.verifyEmail(adminEmail)){
-            JOptionPane.showMessageDialog(null, "Email does not exist!");
-            return false;
-        }
-        
-        if (!checkInfo.verifyCurrentPassword(adminEmail,currentPass)){
+        if (!checkInfo.verifyCurrentPassword(loginEmail2,currentPass)){
             JOptionPane.showMessageDialog(null, "Current password is incorrect!");
             return false;
         }
@@ -55,7 +50,7 @@ public class PassChangeController {
             return false;
         }
         
-        if (checkInfo.updatePassword(adminEmail, newPass)) {
+        if (checkInfo.updatePassword(loginEmail2, newPass)) {
             JOptionPane.showMessageDialog(null, "Password changed successfully!");
             return true;
             

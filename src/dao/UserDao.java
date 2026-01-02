@@ -55,13 +55,21 @@ public class UserDao {
        
 
     public String getUserByEmailAndPassword(String email, String pass){
-        // Hash the entered password
-        String hashedPass = PasswordUtils.hashPassword(pass);
+        try (Connection conn = db.openconnection()) {
+            String sql = "SELECT password, role FROM admin WHERE email = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
 
-        // Check default admin credentials
-        if (email.equals(DEFAULT_ADMIN_EMAIL) && hashedPass.equals(password)) {
-
-            return "admin";
+            if(rs.next()){
+                String dbHashedPass = rs.getString("password");
+                String role = rs.getString("role");
+                if(dbHashedPass.equals(PasswordUtils.hashPassword(pass.trim()))){
+                    return role; // return "admin"
+                }
+            }
+        } catch(Exception e){
+            System.err.println("Admin login error: " + e.getMessage());
         }
         return null;
     }

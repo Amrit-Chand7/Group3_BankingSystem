@@ -22,7 +22,6 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     }
     public EmployeeDashboard(String emailFromLogin) {
         initComponents();
-        System.out.print(emailFromLogin);
         this.email20 = emailFromLogin;
     }
 

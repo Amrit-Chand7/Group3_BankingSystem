@@ -12,6 +12,8 @@ import java.awt.Color;
  */
 public class PassChangeUi extends javax.swing.JFrame {
     
+    private String loginEmail2;
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PassChangeUi.class.getName());
 
     /**
@@ -23,6 +25,12 @@ public class PassChangeUi extends javax.swing.JFrame {
         dashboard_btn.setForeground(Color.WHITE);            
         dashboard_btn.setOpaque(true);                    
         dashboard_btn.setBorderPainted(false);
+    }
+    
+    public PassChangeUi(String email22) {
+        initComponents();
+        this.loginEmail2 = email22;
+
     }
 
     /**
@@ -51,8 +59,6 @@ public class PassChangeUi extends javax.swing.JFrame {
         change_btn = new javax.swing.JButton();
         confirm_pass = new javax.swing.JTextField();
         new_pass = new javax.swing.JTextField();
-        admin_email_label = new javax.swing.JLabel();
-        admin_email_text1 = new javax.swing.JTextField();
         back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -203,17 +209,6 @@ public class PassChangeUi extends javax.swing.JFrame {
             }
         });
 
-        admin_email_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        admin_email_label.setText("Admin Email");
-
-        admin_email_text1.setBackground(new java.awt.Color(147, 181, 211));
-        admin_email_text1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        admin_email_text1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                admin_email_text1ActionPerformed(evt);
-            }
-        });
-
         back_btn.setBackground(new java.awt.Color(179, 28, 221));
         back_btn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         back_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -233,12 +228,9 @@ public class PassChangeUi extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(admin_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
-                                .addGap(24, 24, 24))))
+                            .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -250,8 +242,7 @@ public class PassChangeUi extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(new_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                             .addComponent(confirm_pass)
-                            .addComponent(current_pass)
-                            .addComponent(admin_email_text1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(current_pass)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(change_btn)))
@@ -266,11 +257,7 @@ public class PassChangeUi extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(admin_email_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(admin_email_label))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(current_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -290,7 +277,7 @@ public class PassChangeUi extends javax.swing.JFrame {
         );
 
         pic_outside_panel.add(jPanel1);
-        jPanel1.setBounds(540, 150, 570, 480);
+        jPanel1.setBounds(560, 190, 570, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -319,35 +306,6 @@ public class PassChangeUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_current_passActionPerformed
 
-    private void change_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change_btnActionPerformed
-        // TODO add your handling code here:
-        
-        // 1. Get input values from text fields
-        String adminEmail = admin_email_text1.getText();
-        String currentPass = current_pass.getText();
-        String newPass = new_pass.getText();
-        String confirmPass = confirm_pass.getText();
-
-        
-        // 2. Create controller instance
-        PassChangeController passController = new PassChangeController();
-
-        // 3. Call controller to add employee
-        boolean done = passController.changePassword(adminEmail, currentPass, newPass, confirmPass);
-        
-        if(done) {
-            //Clear fields
-            admin_email_text1.setText("");
-            current_pass.setText("");
-            new_pass.setText("");
-            confirm_pass.setText("");
-            
-            Login log1 = new Login();
-            log1.setVisible(true);
-            this.setVisible(false);   
-        }       
-    }//GEN-LAST:event_change_btnActionPerformed
-
     private void confirm_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_passActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirm_passActionPerformed
@@ -356,16 +314,38 @@ public class PassChangeUi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_new_passActionPerformed
 
-    private void admin_email_text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_email_text1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_admin_email_text1ActionPerformed
-
     private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
         // TODO add your handling code here:
         AdminUi pa = new AdminUi();
         pa.setVisible(true);
         this.setVisible(false);  
     }//GEN-LAST:event_back_btnActionPerformed
+
+    private void change_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change_btnActionPerformed
+        // TODO add your handling code here:
+
+        // 1. Get input values from text fields
+        String currentPass = current_pass.getText();
+        String newPass = new_pass.getText();
+        String confirmPass = confirm_pass.getText();
+
+        // 2. Create controller instance
+        PassChangeController passController = new PassChangeController();
+
+        // 3. Call controller to add employee
+        boolean done = passController.changePassword(loginEmail2, currentPass, newPass, confirmPass);
+
+        if(done) {
+            //Clear fields
+            current_pass.setText("");
+            new_pass.setText("");
+            confirm_pass.setText("");
+
+            Login log1 = new Login();
+            log1.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_change_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,8 +373,6 @@ public class PassChangeUi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel admin_email_label;
-    private javax.swing.JTextField admin_email_text1;
     private javax.swing.JButton back_btn;
     private javax.swing.JPanel blue_panel;
     private javax.swing.JLabel bms_text;

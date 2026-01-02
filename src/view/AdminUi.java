@@ -10,6 +10,8 @@ package view;
  */
 public class AdminUi extends javax.swing.JFrame {
     
+    private String email22;
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminUi.class.getName());
 
     /**
@@ -17,6 +19,10 @@ public class AdminUi extends javax.swing.JFrame {
      */
     public AdminUi() {
         initComponents();
+    }
+    public AdminUi(String emailFromLogin) {
+        initComponents();
+        this.email22 = emailFromLogin;
     }
 
     /**
@@ -309,7 +315,7 @@ public class AdminUi extends javax.swing.JFrame {
 
     private void profile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profile_btnActionPerformed
         // TODO add your handling code here:
-        PassChangeUi passWin = new PassChangeUi();
+        PassChangeUi passWin = new PassChangeUi(email22);
         passWin.setVisible(true);
         this.setVisible(false);
         
@@ -354,7 +360,7 @@ public class AdminUi extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new AdminUi().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new AdminUi("example@admin.com").setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

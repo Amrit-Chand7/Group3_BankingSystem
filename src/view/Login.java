@@ -331,7 +331,7 @@ public class Login extends javax.swing.JFrame {
             return;
         }
         else if("admin".equals(role7)){
-            AdminUi emWindow1 = new AdminUi();
+            AdminUi emWindow1 = new AdminUi(email);
             // close current login window
             this.dispose();
             emWindow1.setVisible(true);  
